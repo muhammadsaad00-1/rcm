@@ -242,24 +242,19 @@ export default function HomePage() {
         </div>
       </div>
 
-      {/* ═══ 10. QUICK CONTACT ═══ */}
+      {/* ═══ 10. QUICK CONTACT CTA ═══ */}
       <section className="section">
         <div className="container">
-          <div className="grid-2 grid-align" style={{ gap: 60 }}>
-            <div>
-              <div className="sec-label">Quick Contact</div>
-              <h2 className="sec-title">Get a Free Practice Audit Today</h2>
-              <p className="sec-sub" style={{ marginBottom: 28 }}>Fill out the form and our billing specialist will contact you within 2 business hours with a personalized analysis of your practice&apos;s revenue opportunities.</p>
-              <div className="feature-row"><div className="feature-icon">⏱️</div><div className="feature-text"><h4>2-Hour Response Guarantee</h4><p>A real billing specialist contacts you — not an automated email.</p></div></div>
-              <div className="feature-row"><div className="feature-icon">🔒</div><div className="feature-text"><h4>100% Confidential</h4><p>Your practice data is protected under our HIPAA-compliant security standards.</p></div></div>
-              <div className="feature-row"><div className="feature-icon">📊</div><div className="feature-text"><h4>Actionable Findings</h4><p>You&apos;ll receive a detailed report on denial rates, AR days, and collection opportunities.</p></div></div>
+          <div className="center" style={{ maxWidth: 760, margin: '0 auto' }}>
+            <div className="sec-label" style={{ justifyContent: 'center', display: 'flex' }}>Quick Contact</div>
+            <h2 className="sec-title">Prefer a Dedicated Contact Page?</h2>
+            <p className="sec-sub" style={{ margin: '0 auto 24px' }}>
+              Use our full contact page for detailed requests and we will respond within 2 business hours.
+            </p>
+            <div style={{ display: 'flex', justifyContent: 'center', gap: 12, flexWrap: 'wrap' }}>
+              <Link href="/contact" className="btn-modern btn-modern-primary">Go to Contact Form</Link>
+              <a href="tel:8662007200" className="btn-modern btn-modern-outline">Call (866) 200-7200</a>
             </div>
-            <ContactForm 
-              title="Request Your Free Audit"
-              subtitle="No obligation · Results within 48 hours"
-              submitButtonText="Submit Free Audit Request →"
-              recipientEmail="ms01.saad@gmail.com"
-            />
           </div>
         </div>
       </section>

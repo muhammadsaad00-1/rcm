@@ -21,7 +21,7 @@ export default function ContactForm({
   includeEHR = true,
   submitButtonText = 'Submit Free Audit Request →',
   onSubmit = null,
-  recipientEmail = 'ms01.saad@gmail.com'
+  recipientEmail = 'Info@renoxmed.com'
 }) {
   const [formData, setFormData] = useState({
     firstName: '',
@@ -59,22 +59,19 @@ export default function ContactForm({
       if (onSubmit) {
         await onSubmit(formData);
       } else {
-        // Submit via SnapItForms
-        const formDataPayload = {
-            access_key: "sf_e52853a36483d10f6-fae0ba783351619",
-            name: `${formData.firstName} ${formData.lastName}`.trim(),
-            email: formData.email,
-            message: `Practice Name: ${formData.practiceName}\nPhone: ${formData.phone}\nSpecialty: ${formData.specialty || 'N/A'}\nProviders: ${formData.providers || 'N/A'}\nEHR: ${formData.ehr || 'N/A'}\nChallenge: ${formData.challenge || 'N/A'}`,
-            ...formData // Passing the rest for completeness if their backend stores arbitrary json
-        };
-
-        const res = await fetch('https://api.snapitforms.com/submit', {
+        // Submit through our server route so the access key stays private
+        const res = await fetch('/api/contact', {
             method: 'POST',
             headers: {
                 'Content-Type': 'application/json'
             },
-            body: JSON.stringify(formDataPayload)
+          body: JSON.stringify(formData)
         });
+
+        if (!res.ok) {
+          const errorResponse = await res.json().catch(() => ({}));
+          throw new Error(errorResponse.error || 'Unable to submit your request right now.');
+        }
 
         const data = await res.json();
         
