@@ -1,0 +1,505 @@
+============================================================
+  CLEARCLAIM WEBSITE — COMPLETE TESTING GUIDE
+  For Non-Technical Testers
+============================================================
+
+This guide will walk you through testing every part of the
+ClearClaim website. You don't need to know anything about
+coding or databases. Just follow the steps below!
+
+------------------------------------------------------------
+BEFORE YOU START
+------------------------------------------------------------
+
+1. Open your browser (Chrome or Safari works best)
+2. Go to this address: http://localhost:3000
+   (Someone will need to start the website for you first)
+3. The homepage should load. If you see an error, ask a
+   developer to start the server first.
+4. Keep this guide open in another tab or print it out.
+
+TIP: When you find a problem, write down:
+  - What page you were on
+  - What you clicked or typed
+  - What happened (or what didn't happen)
+  - What you expected to happen
+
+============================================================
+SECTION 1 — HOMEPAGE (Public Landing Page)
+============================================================
+
+STEP 1: Look at the homepage
+  - Go to: http://localhost:3000
+  - You should see a dark blue page with a headline that says
+    "Stop Losing Revenue. Start Billing Smarter."
+  - You should see a fake dashboard on the right side
+    (this is just for show — not a real dashboard)
+  - You should see two buttons: "Free Consultation" and
+    "See How It Works"
+
+  ✓ PASS if the page looks professional and loads correctly
+  ✗ FAIL if you see a blank page or error message
+
+
+STEP 2: Check the numbers bar
+  - Scroll down a little on the homepage
+  - You should see a dark blue bar with 4 big numbers:
+    "$2.4B+", "99.2%", "5,000+", "18 days"
+
+  ✓ PASS if all 4 numbers are visible
+
+
+STEP 3: Check the navigation menu (top bar)
+  - Look at the top of the page (dark blue bar)
+  - You should see: Home, Services, About, Resources
+  - On the right: a "Patient Portal" button and a "Contact Us" button
+  - Click on "Services" — you should go to the Services page
+  - Click the BACK button in your browser to go back to homepage
+  - Click on "About" — you should go to the About page
+  - Go back and click "Resources" — you should go to the Resources page
+  - Go back to the homepage
+
+  ✓ PASS if all links work and take you to the right pages
+
+
+STEP 4: Scroll through the full homepage
+  - Scroll from top to bottom slowly
+  - You should see (in order):
+    1. Hero section (dark blue with headline)
+    2. White bar with trust badges (HIPAA, 40+ Specialties, etc.)
+    3. Dark blue stats bar (the 4 big numbers)
+    4. Services section (gray background, 9 service cards)
+    5. "Why Choose ClearClaim" section
+    6. Specialties section (dark blue background)
+    7. "How It Works" process steps (5 steps)
+    8. Testimonials (3 customer reviews)
+    9. Pricing (3 plans: Essential, Professional, Enterprise)
+    10. Compliance section
+    11. FAQ section
+    12. "Ready to Get Started?" call-to-action
+    13. Footer at the bottom
+
+  ✓ PASS if all sections appear and look clean
+  ✗ FAIL if any section looks broken, overlapping, or has giant blank spaces
+
+
+STEP 5: Test the "Free Consultation" button
+  - Click the yellow/gold "🩺 Free Consultation" button in the hero
+  - You should be taken to the Contact page
+
+  ✓ PASS if it goes to the Contact page
+
+
+============================================================
+SECTION 2 — CONTACT PAGE
+============================================================
+
+STEP 1: Open the Contact page
+  - Go to: http://localhost:3000/contact
+  - You should see a contact form with fields for:
+    First Name, Last Name, Email, Phone, Practice Name, Message
+
+STEP 2: Try submitting an empty form
+  - Click the "Send Message" button without filling anything in
+  - The form should NOT submit — it should show error messages
+    asking you to fill in required fields
+
+  ✓ PASS if the form blocks the empty submission
+
+STEP 3: Fill in the form and submit
+  - Fill in all the fields with test information:
+    First Name: Test
+    Last Name: User
+    Email: test@example.com
+    Phone: 555-123-4567
+    Practice Name: Test Clinic
+    Message: This is a test message
+  - Click "Send Message"
+  - You should see a success message or "Thank you" confirmation
+
+  ✓ PASS if the form submits and shows a success message
+  ✗ FAIL if you see an error in red or the page crashes
+
+
+============================================================
+SECTION 3 — SERVICES PAGE
+============================================================
+
+STEP 1: Open the Services page
+  - Go to: http://localhost:3000/services
+  - Or click "Services" in the top navigation bar
+
+STEP 2: Check the page content
+  - You should see a page header with a title
+  - Below that, you should see multiple service cards
+
+STEP 3: Click on a service card
+  - Click on any of the service cards (for example, "Medical Coding")
+  - You should be taken to a detail page for that service
+
+  ✓ PASS if it opens the service detail page
+  ✗ FAIL if clicking shows an error
+
+
+============================================================
+SECTION 4 — ABOUT PAGE
+============================================================
+
+STEP 1: Open the About page
+  - Go to: http://localhost:3000/about
+
+STEP 2: Check the content
+  - You should see information about the company
+  - There should be a team section with team member cards
+  - There should be a stats section (Years of Experience, etc.)
+
+  ✓ PASS if the page loads and looks complete
+
+
+============================================================
+SECTION 5 — RESOURCES PAGE
+============================================================
+
+STEP 1: Open the Resources page
+  - Go to: http://localhost:3000/resources
+
+STEP 2: Check the content
+  - You should see resource/blog post cards
+  - Each card may have a title, description, and a "Read More" link
+
+STEP 3: Click a resource article
+  - Click on any article card
+  - It should open the full article
+
+  ✓ PASS if articles open correctly
+
+
+============================================================
+SECTION 6 — PATIENT PORTAL (Patient Sign Up)
+============================================================
+
+This section tests how a NEW patient signs up for access.
+
+STEP 1: Open the Patient Portal page
+  - Go to: http://localhost:3000/portal
+  - You should see two options: "Patient Login" and "New Patient? Request Access"
+
+STEP 2: Click "Request Access" (or "Sign Up")
+  - Click the sign-up option
+  - You should be taken to a sign-up form
+
+STEP 3: Fill in the sign-up form
+  Use this test information:
+    First Name: Jane
+    Last Name: Patient
+    Email: janepatient@test.com
+    Password: TestPass123
+    Date of Birth: 01/15/1985
+    Phone: 555-987-6543
+    (Fill in any other required fields)
+
+STEP 4: Submit the form
+  - Click the "Submit Request" or "Sign Up" button
+  - You should see a message like:
+    "Your request has been submitted. Please wait for admin approval."
+
+  ✓ PASS if you see a confirmation/pending message
+  ✗ FAIL if you see a red error (unless you forgot to fill a field)
+
+
+============================================================
+SECTION 7 — ADMIN PORTAL (Approve the Patient)
+============================================================
+
+Now you need to switch to the admin side to approve the patient
+you just signed up.
+
+STEP 1: Open the Admin login page
+  - Go to: http://localhost:3000/admin
+  - You should see an admin login form
+
+STEP 1A: Also test the /auth/admin route
+  - Go to: http://localhost:3000/auth/admin
+  - One of these should happen:
+    1. You see the same admin login page
+    2. You are automatically redirected to /admin
+  - If you see a "Page not found" error or a blank page, report it to the developer
+
+  ✓ PASS if /auth/admin opens admin login or redirects to /admin
+  ✗ FAIL if /auth/admin is broken, blank, or shows a 404 page
+
+STEP 2: Log in as Admin
+  - Use the admin credentials (ask the developer for these)
+  - Typical test credentials:
+    Email: admin@clearclaim.com
+    Password: (ask developer)
+
+STEP 3: Go to the Admin Dashboard
+  - After logging in, you should see the Admin Dashboard
+  - Look for a "Patient Portal Requests" card or a "Pending" section
+
+STEP 4: Find and approve the patient
+  - Click on "Patient Portal Requests" or go to the Patients section
+  - You should see "Jane Patient" with a "Pending" status
+  - Click "Approve" next to Jane Patient's name
+  - A confirmation dialog may appear — click "Approve" again to confirm
+  - The status should change to "Approved"
+
+  ✓ PASS if Jane Patient is now shown as "Approved"
+  ✗ FAIL if you can't find the patient or the approval button doesn't work
+
+
+============================================================
+SECTION 8 — PATIENT PORTAL (Patient Login After Approval)
+============================================================
+
+Now test that the approved patient can log in.
+
+STEP 1: Open the Patient Portal login page
+  - Go to: http://localhost:3000/portal/login
+  - OR go to http://localhost:3000/portal and click "Patient Login"
+
+STEP 2: Log in as the patient
+  - Email: janepatient@test.com
+  - Password: TestPass123
+
+STEP 3: Check what happens
+  - You should be logged in and see a patient dashboard
+  - The dashboard should show the patient's name and information
+
+  ✓ PASS if the patient can log in and sees their dashboard
+  ✗ FAIL if it says "Access Denied" or shows an error
+
+
+STEP 4: Try logging in BEFORE approval (optional extra test)
+  - Log out of the patient portal
+  - Create a NEW sign-up request with a different email
+    (e.g., testpatient2@test.com)
+  - Without approving it, try to log in with that email
+  - You should see a message like "Account not yet approved"
+
+  ✓ PASS if unapproved patients cannot log in
+
+
+STEP 5: Patient portal features
+  - While logged in as Jane Patient, look around the dashboard
+  - You should see sections for appointments, billing statements,
+    or other patient information
+  - Try clicking around to see all available features
+
+  ✓ PASS if the dashboard loads and is readable
+
+
+STEP 6: Log out of patient portal
+  - Find a "Log Out" or "Sign Out" button
+  - Click it
+  - You should be taken back to the portal login page or home page
+
+  ✓ PASS if you are successfully logged out
+
+
+============================================================
+SECTION 9 — ADMIN AREA (Full Admin Testing)
+============================================================
+
+STEP 1: Log in to admin (if not already logged in)
+  - Go to: http://localhost:3000/admin
+  - Log in with admin credentials
+  - Optional extra check: first try http://localhost:3000/auth/admin
+    and confirm it opens the admin login page or redirects correctly
+
+STEP 2: Check the Admin Dashboard
+  - You should see cards showing:
+    - Total Users
+    - Active Patients
+    - Total Claims
+    - Revenue numbers
+  - You should see recent activity lists
+
+  ✓ PASS if the dashboard shows data and looks complete
+
+
+STEP 3: Test User Management
+  - In the left sidebar or top navigation, look for "Users" or "User Management"
+  - Click it
+  - You should see a list of users in the system
+
+  STEP 3a: Create a new user
+  - Click "Add User" or "New User" button
+  - Fill in the form:
+    Name: Test Staff Member
+    Email: teststaff@clearclaim.com
+    Role: Select any role
+    Password: (fill in a password)
+  - Click Save/Create
+  - The new user should appear in the list
+
+  ✓ PASS if the user is created and appears in the list
+
+
+STEP 4: Test Patient Management
+  - Look for "Patients" in the navigation
+  - Click it
+  - You should see a list of patients
+
+  STEP 4a: Click on a patient name
+  - Click any patient in the list
+  - You should see that patient's detail page with their information
+
+  ✓ PASS if the detail page opens with patient info
+
+
+STEP 5: Test Claims
+  - Look for "Claims" in the navigation
+  - Click it
+  - You should see a list of claims
+
+  STEP 5a: Look at a claim
+  - Click on any claim to see its details
+  
+  ✓ PASS if claims list loads and details are viewable
+
+
+STEP 6: Test Payments
+  - Look for "Payments" in the navigation
+  - Click it
+  - You should see a payments list or payment records
+
+  ✓ PASS if the payments section loads
+
+
+STEP 7: Test Reports
+  - Look for "Reports" or "Analytics" in the navigation
+  - Click it
+  - You should see charts, graphs, or report data
+
+  ✓ PASS if the reports page loads with some data or charts
+
+
+STEP 8: Log out of admin
+  - Find the logout option (usually in the top right corner
+    or under your name/avatar)
+  - Click it
+  - You should be taken back to the admin login page
+
+  ✓ PASS if you are logged out successfully
+
+
+============================================================
+SECTION 10 — MOBILE / TABLET VIEW (Optional)
+============================================================
+
+STEP 1: Check mobile view
+  - On your computer, you can test mobile view:
+    - In Chrome: Press F12, then click the phone icon at the top
+    - This simulates a mobile device
+  - Browse the website in mobile mode
+
+STEP 2: Check key things on mobile
+  - The top navigation bar should collapse into a hamburger menu (☰)
+  - Click the hamburger menu — a full-screen menu should open
+  - All text should be readable (not tiny or overlapping)
+  - Buttons should be large enough to tap
+
+  ✓ PASS if the site looks good on mobile and the menu works
+
+
+============================================================
+SECTION 11 — THINGS THAT SHOULD ALWAYS WORK
+============================================================
+
+These are quick checks you can do at any time:
+
+  □ Every page loads without showing an error
+  □ The navigation bar appears on every page
+  □ The footer appears at the bottom of every page
+  □ Clicking the ClearClaim logo always goes back to the homepage
+  □ All buttons are clickable (not greyed out, not invisible)
+  □ Text is readable (not white on white, not too small)
+  □ No pages are completely blank
+
+
+============================================================
+COMMON ISSUES AND WHAT TO TRY
+============================================================
+
+PROBLEM: "Page not found" error (404)
+  WHAT TO TRY: Make sure you typed the address correctly.
+  Tell the developer which link was broken.
+
+PROBLEM: The website won't load at all
+  WHAT TO TRY: The developer needs to start (or restart)
+  the website server. Ask them to run it again.
+
+PROBLEM: I submitted a form but nothing happened
+  WHAT TO TRY: Check if all required fields were filled in.
+  Try again and look for any red error messages.
+  If still nothing, tell the developer.
+
+PROBLEM: Admin login doesn't work
+  WHAT TO TRY: Ask the developer for the correct admin
+  email and password. Passwords are case-sensitive.
+
+PROBLEM: Patient portal says "Account not approved" even after approval
+  WHAT TO TRY: Log out and log back in. If still not working,
+  ask the developer to check the database.
+
+PROBLEM: A button click does nothing
+  WHAT TO TRY: Try refreshing the page and doing it again.
+  If it still doesn't work, note the page and button name
+  and tell the developer.
+
+PROBLEM: Images are broken (showing a small icon with an X)
+  WHAT TO TRY: Note which page and tell the developer.
+  This means an image file is missing.
+
+
+============================================================
+TESTING CHECKLIST — QUICK SUMMARY
+============================================================
+
+Use this as a quick checklist when testing:
+
+PUBLIC WEBSITE:
+  [ ] Homepage loads and looks professional
+  [ ] All trust badges and stats numbers visible
+  [ ] Navigation links all work (Services, About, Resources)
+  [ ] "Free Consultation" button goes to Contact page
+  [ ] Contact form blocks empty submissions
+  [ ] Contact form submits with a success message
+  [ ] Services page loads with service cards
+  [ ] About page loads
+  [ ] Resources page loads with articles
+
+PATIENT PORTAL:
+  [ ] Patient can sign up (gets "pending approval" message)
+  [ ] Unapproved patient CANNOT log in
+  [ ] Admin can see and approve pending patient requests
+  [ ] Approved patient CAN log in
+  [ ] Patient dashboard loads correctly
+  [ ] Patient can log out
+
+ADMIN AREA:
+  [ ] /auth/admin opens admin login or redirects to /admin
+  [ ] Admin can log in
+  [ ] Admin dashboard shows stats
+  [ ] Can create a new user
+  [ ] Can view patient list and patient details
+  [ ] Can view claims list
+  [ ] Can view payments
+  [ ] Can view reports/analytics
+  [ ] Admin can log out
+
+MOBILE:
+  [ ] Hamburger menu works on small screens
+  [ ] Text is readable on mobile
+  [ ] Buttons are tappable on mobile
+
+
+============================================================
+Thank you for testing! Every bug you find helps make
+ClearClaim better for our customers.
+
+Please document any issues you find and share them with
+the development team.
+============================================================
