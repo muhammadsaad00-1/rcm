@@ -18,8 +18,8 @@ const sourceSerif = Source_Serif_4({
 });
 
 export const metadata = {
-  title: 'ClearClaim Medical Billing | Professional RCM Services',
-  description: 'ClearClaim handles your complete medical billing workflow — from insurance verification and coding to claim submission, denial management, and payment posting.',
+  title: 'RenoxMed | Professional Revenue Cycle Management Solutions',
+  description: 'RenoxMed handles your complete medical billing workflow — from insurance verification and coding to claim submission, denial management, and payment posting.',
 };
 
 export const viewport = {

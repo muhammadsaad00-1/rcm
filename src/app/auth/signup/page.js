@@ -92,11 +92,11 @@ export default function SignupPage() {
       <div className="auth-glow2"></div>
       <div className="auth-card" style={{ maxWidth: 520 }}>
         <div className="auth-logo">
-          <div className="logo-mark"></div>
-          <div className="logo-text"><div className="logo-name">Clear<span>Claim</span></div></div>
+          <img src="/logo.jpg" alt="RenoxMed" className="logo-img" />
+          <div className="logo-text"><div className="logo-name">Renox<span>Med</span></div></div>
         </div>
         <h2 className="auth-title">Create Your Account</h2>
-        <p className="auth-sub">Join ClearClaim to manage medical billing</p>
+        <p className="auth-sub">Join RenoxMed to manage medical billing</p>
 
         {error && (
           <div style={{ background: 'rgba(232,83,75,.1)', color: 'var(--red)', padding: '12px 16px', borderRadius: 'var(--r-sm)', marginBottom: 24, fontSize: 14 }}>

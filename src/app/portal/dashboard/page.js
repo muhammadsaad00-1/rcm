@@ -69,7 +69,7 @@ export default async function PatientDashboardPage() {
             {/* Top Nav */}
             <nav className="dashboard-nav">
                 <div style={{ display: 'flex', alignItems: 'center', gap: '12px' }}>
-                    <span className="dn-logo">ClearClaim</span>
+                    <span className="dn-logo">RenoxMed</span>
                     <span className="dn-badge">PATIENT PORTAL</span>
                 </div>
                 <div style={{ display: 'flex', alignItems: 'center', gap: '20px' }}>

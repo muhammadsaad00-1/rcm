@@ -32,7 +32,7 @@ export default function BillingPage() {
                         <div><Image src="/images/medical-team.png" alt="Medical billing team" width={500} height={400} style={{ width: '100%', height: 'auto', borderRadius: 'var(--r-xl)' }} /></div>
                         <div>
                             <div className="sec-label">Key Performance Metrics</div>
-                            <h2 className="sec-title">What You Can Expect When You Switch to ClearClaim</h2>
+                            <h2 className="sec-title">What You Can Expect When You Switch to RenoxMed</h2>
                             <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: 16, marginTop: 12 }}>
                                 {[{ v: '98.3%', l: 'Clean Claim Rate' }, { v: '48 hrs', l: 'Submission Time' }, { v: '+21%', l: 'Avg Revenue Increase' }, { v: '18 days', l: 'Average AR Days' }].map(m => (
                                     <div key={m.l} style={{ background: 'var(--teal-soft)', border: '1px solid var(--teal-mid)', borderRadius: 'var(--r-md)', padding: 20, textAlign: 'center' }}>
@@ -48,7 +48,7 @@ export default function BillingPage() {
             <section className="section" style={{ background: 'var(--off)' }}>
                 <div className="container">
                     <div className="grid-2 grid-align" style={{ gap: 60 }}>
-                        <div><div className="sec-label">Get Started</div><h2 className="sec-title">Ready to Improve Your Clean Claim Rate?</h2><p className="sec-sub">Join 1,200+ providers who trust ClearClaim with their medical billing. Request a free audit to see how much additional revenue you can recover.</p><div style={{ marginTop: 24, display: 'flex', gap: 12, flexWrap: 'wrap' }}><Link href="/contact" className="btn-primary">Start Today</Link><Link href="/services" className="btn-outline">All Services</Link></div></div>
+                        <div><div className="sec-label">Get Started</div><h2 className="sec-title">Ready to Improve Your Clean Claim Rate?</h2><p className="sec-sub">Join 1,200+ providers who trust RenoxMed with their medical billing. Request a free audit to see how much additional revenue you can recover.</p><div style={{ marginTop: 24, display: 'flex', gap: 12, flexWrap: 'wrap' }}><Link href="/contact" className="btn-primary">Start Today</Link><Link href="/services" className="btn-outline">All Services</Link></div></div>
                         <div className="cform-wrap"><div className="cform-title">Get a Free Consultation</div><div className="cform-sub">Speak with a billing specialist within 2 hours</div>
                             <div className="form-row"><div className="form-group"><label>Name *</label><input type="text" placeholder="Dr. Name" /></div><div className="form-group"><label>Practice Name *</label><input type="text" placeholder="Practice Name" /></div></div>
                             <div className="form-group"><label>Email *</label><input type="email" placeholder="email@practice.com" /></div>

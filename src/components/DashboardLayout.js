@@ -49,8 +49,8 @@ export default function DashboardLayout({ children, user, role }) {
     <div className="dashboard-layout-modern flex-container">
       {/* Mobile Header (Visible only on small screens) */}
       <div className="dashboard-mobile-header">
-        <Link href="/" className="logo-text" style={{ textDecoration: 'none', color: 'var(--navy)' }}>
-          <div className="logo-name" style={{ fontSize: '18px' }}>Clear<span style={{ color: 'var(--teal)' }}>Claim</span></div>
+        <Link href="/" className="nav-logo">
+          <img src="/logo-transparent.png" alt="RenoxMed" style={{ height: '40px', width: 'auto' }} />
         </Link>
         <button className="mobile-menu-btn" onClick={() => setIsMobileOpen(!isMobileOpen)}>
           <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
@@ -67,13 +67,8 @@ export default function DashboardLayout({ children, user, role }) {
       {/* Sidebar */}
       <aside className={`sidebar-modern ${isMobileOpen ? 'mobile-open' : ''}`}>
         <div className="sidebar-brand">
-          <Link href="/" style={{ textDecoration: 'none', color: 'white' }}>
-            <h1 style={{ fontSize: '24px', fontWeight: '800', marginBottom: '4px', letterSpacing: '-0.02em' }}>
-              Clear<span style={{ color: 'var(--teal)' }}>Claim</span>
-            </h1>
-            <p style={{ fontSize: '11px', color: 'rgba(255,255,255,0.5)', textTransform: 'uppercase', letterSpacing: '0.1em' }}>
-              RCM Platform
-            </p>
+          <Link href="/" style={{ textDecoration: 'none', color: 'white', display: 'block', marginBottom: '8px' }}>
+            <img src="/logo-transparent.png" alt="RenoxMed" style={{ height: '64px', width: 'auto', filter: 'brightness(0) invert(1)' }} />
           </Link>
         </div>
 

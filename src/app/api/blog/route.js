@@ -68,7 +68,7 @@ function defaultBlogPosts() {
         description: 'Comprehensive breakdown of 400+ CPT code additions, deletions, and revisions effective January 2025.',
         imageUrl: '/images/blog/cpt-codes.jpg',
         content: '...',
-        author: 'ClearClaim Coding Team',
+        author: 'RenoxMed Coding Team',
         publishedAt: '2025-01-08',
         readTime: '8 min read',
         featured: true

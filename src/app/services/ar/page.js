@@ -16,7 +16,7 @@ export default function ARPage() {
                     <div><Image src="/images/billing-audit.png" alt="Accounts receivable management" width={500} height={400} style={{ width: '100%', height: 'auto', borderRadius: 'var(--r-xl)' }} /></div>
                 </div>
             </div></section>
-            <section className="section" style={{ background: 'var(--off)' }}><div className="container"><div className="grid-2 grid-align" style={{ gap: 60 }}><div><div className="sec-label">Reduce Your AR</div><h2 className="sec-title">From 54 Days to 18 Days — On Average</h2><p className="sec-sub">Practices that switch to ClearClaim AR management see an average reduction from 54+ AR days to under 20 within 90 days.</p></div>
+            <section className="section" style={{ background: 'var(--off)' }}><div className="container"><div className="grid-2 grid-align" style={{ gap: 60 }}><div><div className="sec-label">Reduce Your AR</div><h2 className="sec-title">From 54 Days to 18 Days — On Average</h2><p className="sec-sub">Practices that switch to RenoxMed AR management see an average reduction from 54+ AR days to under 20 within 90 days.</p></div>
                 <div className="cform-wrap"><div className="cform-title">Free AR Analysis</div><div className="cform-sub">See your AR recovery potential in 48 hours</div>
                     <div className="form-row"><div className="form-group"><label>Name *</label><input type="text" /></div><div className="form-group"><label>Email *</label><input type="email" /></div></div>
                     <div className="form-group"><label>Phone *</label><input type="tel" /></div>

@@ -2,7 +2,7 @@
 
 /**
  * WhyChooseUs Component
- * Professional feature cards highlighting ClearClaim's value propositions
+ * Professional feature cards highlighting RenoxMed's value propositions
  */
 
 export default function WhyChooseUs() {
@@ -58,7 +58,7 @@ export default function WhyChooseUs() {
             letterSpacing: '0.12em',
             marginBottom: '12px'
           }}>
-            ✨ Why Choose ClearClaim
+            ✨ Why Choose RenoxMed
           </div>
           <h2 style={{
             fontSize: 'clamp(2rem, 3.5vw, 3rem)',

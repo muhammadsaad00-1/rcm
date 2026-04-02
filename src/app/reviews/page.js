@@ -4,22 +4,22 @@ import PageHero from '@/components/PageHero';
 import { MiniFooter } from '@/components/Footer';
 
 const reviews = [
-    { text: '"ClearClaim dropped our denial rate from 14% to under 2% in just 60 days. We recovered over $180,000 in revenue we didn\'t know we were losing."', name: 'Dr. Rachel Torres, MD', role: 'Cardiology Associates · Dallas, TX', init: 'RT', bg: 'linear-gradient(135deg,#0B1437,#162257)' },
+    { text: '"RenoxMed dropped our denial rate from 14% to under 2% in just 60 days. We recovered over $180,000 in revenue we didn\'t know we were losing."', name: 'Dr. Rachel Torres, MD', role: 'Cardiology Associates · Dallas, TX', init: 'RT', bg: 'linear-gradient(135deg,#0B1437,#162257)' },
     { text: '"Our AR days dropped from 58 to 19 within the first quarter. The specialty coding expertise is exactly what a 3-location orthopedic group needs."', name: 'James Kowalski', role: 'Admin Director · Summit Orthopedics · IL', init: 'JK', bg: 'linear-gradient(135deg,#00C9A7,#0B1437)' },
     { text: '"Zero telehealth claim denials in 9 months. They stay ahead of every payer-specific rule change before it impacts our collections."', name: 'Dr. Anita Patel, LCSW', role: 'ClearMind Behavioral Health · CA', init: 'AP', bg: 'linear-gradient(135deg,#F5A623,#C17D00)' },
     { text: '"The transition took 11 days and we didn\'t miss a single claim. Our collections increased 24% in the first 6 months."', name: 'Dr. Michael Brown', role: 'Family Practice · Atlanta, GA', init: 'MB', bg: 'linear-gradient(135deg,#27AE60,#1A7040)' },
-    { text: '"As a nephrology practice with complex dialysis billing, ClearClaim\'s specialty expertise is unmatched. They know every ESRD billing nuance."', name: 'Dr. Sarah Kim, MD', role: 'Chicago Kidney Center · Chicago, IL', init: 'SK', bg: 'linear-gradient(135deg,#E8534B,#9B2020)' },
+    { text: '"As a nephrology practice with complex dialysis billing, RenoxMed\'s specialty expertise is unmatched. They know every ESRD billing nuance."', name: 'Dr. Sarah Kim, MD', role: 'Chicago Kidney Center · Chicago, IL', init: 'SK', bg: 'linear-gradient(135deg,#E8534B,#9B2020)' },
     { text: '"The real-time dashboard is a game changer. I can see every claim status, denial, and payment from my phone. Total transparency."', name: 'Thomas Walsh, MBA', role: 'Practice Administrator · Midwest Urgent Care', init: 'TW', bg: 'linear-gradient(135deg,#0B1437,#162257)' },
-    { text: '"We switched from a big-name billing company and immediately saw a 31% jump in collections. ClearClaim actually cares about your revenue."', name: 'Dr. Lisa Chen, DPM', role: 'Metro Podiatry Group · New York, NY', init: 'LC', bg: 'linear-gradient(135deg,#9B59B6,#6C3483)' },
+    { text: '"We switched from a big-name billing company and immediately saw a 31% jump in collections. RenoxMed actually cares about your revenue."', name: 'Dr. Lisa Chen, DPM', role: 'Metro Podiatry Group · New York, NY', init: 'LC', bg: 'linear-gradient(135deg,#9B59B6,#6C3483)' },
     { text: '"Their credentialing team got us enrolled with 12 new payers in under 60 days. Not a single application was rejected."', name: 'Amanda Rodriguez, MBA', role: 'Desert Dermatology · Phoenix, AZ', init: 'AR', bg: 'linear-gradient(135deg,#2980B9,#1A5276)' },
-    { text: '"Before ClearClaim, we had $340K sitting in unpaid claims over 90 days. Within 4 months, they recovered 87% of it."', name: 'Dr. David Park, MD', role: 'Pacific Neurology · San Diego, CA', init: 'DP', bg: 'linear-gradient(135deg,#00C9A7,#162257)' },
+    { text: '"Before RenoxMed, we had $340K sitting in unpaid claims over 90 days. Within 4 months, they recovered 87% of it."', name: 'Dr. David Park, MD', role: 'Pacific Neurology · San Diego, CA', init: 'DP', bg: 'linear-gradient(135deg,#00C9A7,#162257)' },
 ];
 
 export default function ReviewsPage() {
     return (
         <>
             <Breadcrumb items={[{ label: 'Home', href: '/' }, { label: 'Client Reviews' }]} />
-            <PageHero tag="⭐ Reviews" title="What Our Clients" titleAccent="Say About Us" description="1,200+ providers trust ClearClaim with their revenue cycle. Share your experience or read what others have to say." />
+            <PageHero tag="⭐ Reviews" title="What Our Clients" titleAccent="Say About Us" description="1,200+ providers trust RenoxMed with their revenue cycle. Share your experience or read what others have to say." />
 
             {/* Leave a Review Form — ON TOP */}
             <section className="section" style={{ background: 'linear-gradient(180deg, var(--teal-soft) 0%, var(--off) 100%)' }}>
@@ -44,7 +44,7 @@ export default function ReviewsPage() {
                                     {[1,2,3,4,5].map(s => <span key={s}>★</span>)}
                                 </div>
                             </div>
-                            <div className="form-group"><label>Your Review *</label><textarea placeholder="Tell us about your experience with ClearClaim..." style={{ minHeight: 120 }}></textarea></div>
+                            <div className="form-group"><label>Your Review *</label><textarea placeholder="Tell us about your experience with RenoxMed..." style={{ minHeight: 120 }}></textarea></div>
                             <button className="form-submit" type="button">Submit Review →</button>
                             <p className="form-note">Your review will be verified before publishing</p>
                         </div>

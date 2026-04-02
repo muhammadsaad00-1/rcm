@@ -8,7 +8,9 @@ export function FullFooter() {
         <footer className="site-footer">
             <div className="footer-top">
                 <div className="footer-brand">
-                    <div className="nav-logo"><div className="logo-mark"></div><div className="logo-text"><div className="logo-name">Clear<span>Claim</span></div><div className="logo-tag">Medical Billing</div></div></div>
+                    <Link href="/" className="nav-logo" style={{ marginBottom: '24px', display: 'inline-flex', alignItems: 'center' }}>
+                        <img src="/logo-transparent.png" alt="RenoxMed" style={{ height: '110px', width: 'auto', display: 'block' }} />
+                    </Link>
                     <p>US-based revenue cycle management for healthcare providers of all sizes. HIPAA-compliant since 2012. Starting at 2.95% of monthly collections.</p>
                     <div className="footer-certif">
                         <div className="certif-badge"><span className="cb-ico">🔒</span>HIPAA</div>
@@ -59,7 +61,7 @@ export function FullFooter() {
                 <div className="footer-col">
                     <h5>Contact</h5>
                     <div className="footer-contact-item"><div className="fci-ico">📞</div><div><div className="fci-label">Phone</div><div className="fci-val">(866) 200-7200</div></div></div>
-                    <div className="footer-contact-item"><div className="fci-ico">📧</div><div><div className="fci-label">Email</div><div className="fci-val">info@clearclaim.com</div></div></div>
+                    <div className="footer-contact-item"><div className="fci-ico">📧</div><div><div className="fci-label">Email</div><div className="fci-val">info@renoxmed.com</div></div></div>
                     <div className="footer-contact-item"><div className="fci-ico">📍</div><div><div className="fci-label">Office</div><div className="fci-val">Dallas, TX 75201</div></div></div>
                     <div className="footer-newsletter">
                         <p>Subscribe to billing updates:</p>
@@ -71,7 +73,7 @@ export function FullFooter() {
                 </div>
             </div>
             <div className="footer-bottom">
-                <div className="footer-copy">© 2025 ClearClaim Medical Billing Inc. All rights reserved.</div>
+                <div className="footer-copy">© 2025 RenoxMed Medical Billing Inc. All rights reserved.</div>
                 <div className="footer-legal">
                     <a>Privacy Policy</a>
                     <a>Terms of Use</a>
@@ -87,7 +89,7 @@ export function MiniFooter() {
     return (
         <footer className="site-footer" style={{ marginTop: 0 }}>
             <div className="footer-bottom" style={{ maxWidth: 1320, margin: '0 auto', padding: '24px 5%', border: 'none' }}>
-                <div className="footer-copy">© 2025 ClearClaim Medical Billing Inc.</div>
+                <div className="footer-copy">© 2025 RenoxMed Medical Billing Inc.</div>
                 <div className="footer-legal">
                     <Link href="/">Home</Link>
                     <a>Privacy Policy</a>

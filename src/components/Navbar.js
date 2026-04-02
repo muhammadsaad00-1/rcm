@@ -22,7 +22,7 @@ export default function Navbar() {
             <div className="topbar">
                 <div className="topbar-left">
                     <div className="tb-item"><span>📞</span>&nbsp;<a href="tel:8662007200" style={{ color: 'rgba(255,255,255,.6)' }}>(866) 200-7200</a></div>
-                    <div className="tb-item"><span>✉</span>&nbsp;<a href="mailto:info@clearclaim.com" style={{ color: 'rgba(255,255,255,.6)' }}>info@clearclaim.com</a></div>
+                    <div className="tb-item"><span>✉</span>&nbsp;<a href="mailto:info@renoxmed.com" style={{ color: 'rgba(255,255,255,.6)' }}>info@renoxmed.com</a></div>
                     <div className="tb-item"><span>📍</span>&nbsp;Dallas, TX USA</div>
                 </div>
                 <div className="topbar-right">
@@ -37,11 +37,7 @@ export default function Navbar() {
             <nav className="site-nav">
                 <div className="nav-inner">
                     <Link href="/" className="nav-logo">
-                        <div className="logo-mark"></div>
-                        <div className="logo-text">
-                            <div className="logo-name">Clear<span>Claim</span></div>
-                            <div className="logo-tag">Medical Billing</div>
-                        </div>
+                        <img src="/logo-transparent.png" alt="RenoxMed" className="logo-img-main" />
                     </Link>
 
                     <ul className="nav-menu">

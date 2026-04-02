@@ -107,7 +107,7 @@ export default function HomeHero() {
 
                     <p className="hm-desc">
                         Stop losing 15–25% of your earned revenue to billing inefficiencies.
-                        ClearClaim delivers end-to-end revenue cycle management with a 98.3%
+                        RenoxMed delivers end-to-end revenue cycle management with a 98.3%
                         clean claim rate — starting at just 2.95% of collections.
                     </p>
 

@@ -31,7 +31,7 @@
   --r-md: 12px;
   --r-lg: 18px;
   --r-xl: 24px;
-  --nav-h: 68px;
+  --nav-h: 88px;
   --top-h: 38px;
 }
 
@@ -200,27 +200,28 @@ textarea {
   text-decoration: none;
 }
 
+.logo-img,
+.logo-img-main {
+  width: auto;
+  height: 68px;
+  object-fit: contain;
+  display: block;
+  transition: transform .3s ease;
+}
+
+.logo-img-main:hover {
+  transform: translateY(-1px);
+}
+
 .logo-mark {
-  width: 40px;
-  height: 40px;
-  background: linear-gradient(135deg, var(--navy) 0%, var(--navy3) 100%);
-  border-radius: 10px;
+  width: 48px;
+  height: 48px;
   display: flex;
   align-items: center;
   justify-content: center;
-  position: relative;
-  overflow: hidden;
 }
 
-.logo-mark::after {
-  content: '';
-  position: absolute;
-  width: 22px;
-  height: 3px;
-  background: var(--teal);
-  border-radius: 2px;
-  box-shadow: 0 -8px 0 var(--teal), 0 8px 0 rgba(0, 201, 167, .4);
-}
+/* logo-mark pseudo-element removed in favor of image logo */
 
 .logo-text {
   line-height: 1;

@@ -75,14 +75,14 @@ function LoginForm() {
       <div className="auth-glow2"></div>
       <div className="auth-card">
         <div className="auth-logo">
-          <div className="logo-mark"></div>
+          <img src="/logo.jpg" alt="RenoxMed" className="logo-img" />
           <div className="logo-text">
-            <div className="logo-name">Clear<span>Claim</span></div>
+            <div className="logo-name">Renox<span>Med</span></div>
             <div className="logo-tag">Secure Portal</div>
           </div>
         </div>
         <h2 className="auth-title">Welcome Back</h2>
-        <p className="auth-sub">Sign in to your ClearClaim dashboard</p>
+        <p className="auth-sub">Sign in to your RenoxMed dashboard</p>
 
         {error && (
           <div style={{ background: 'rgba(232,83,75,.1)', color: 'var(--red)', padding: '12px 16px', borderRadius: 'var(--r-sm)', marginBottom: 24, fontSize: 14 }}>
