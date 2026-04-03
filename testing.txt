@@ -1,6 +1,6 @@
 ============================================================
   CLEARCLAIM WEBSITE — COMPLETE TESTING GUIDE
-  For Non-Technical Testersss
+  For Non-Technical Testersjjss
 ============================================================
 
 This guide will walk you through testing every part of the
