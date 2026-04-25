@@ -1,226 +1,265 @@
 'use client';
-import Link from 'next/link';
-import { useEffect, useState } from 'react';
+import { useState, useEffect, useRef, useCallback } from 'react';
 
-/**
- * Pipeline phases:
- *  0 - Step 1 active (just started)
- *  1 - Step 1 done, Step 2 active
- *  2 - Step 1 & 2 done, Step 3 active  ← default starting point
- *  3 - All done, show approved notification
- *  then loop back to 0
- */
-const PIPELINE_STEPS = [
-    { id: 0, name: 'Patient Eligibility Checked', sub: { done: 'Completed automatically', active: 'Checking insurance...' } },
-    { id: 1, name: 'CPT / ICD-10 Coding',         sub: { done: 'Verified by AI & Specialist', active: 'Running AI scrub...' } },
-    { id: 2, name: 'Claim Submission',             sub: { done: 'Sent to payer successfully', active: 'Routing to Payer...' } },
+const SLIDES = [
+  {
+    id: 'reimbursement',
+    eyebrow: 'Revenue cycle, accelerated',
+    title: 'Get paid faster,\nwith fewer write-offs.',
+    body: 'Independent practices using RenoxMed cut average AR days by 38% in the first 90 days — without hiring more billers.',
+    stat: { value: '38%', label: 'Avg. AR days reduction' },
+    image: 'https://images.unsplash.com/photo-1551601651-2a8555f1a136?w=1400&q=80&auto=format&fit=crop',
+    accent: 'turquoise',
+  },
+  {
+    id: 'denials',
+    eyebrow: 'Denial management',
+    title: '98.4% clean-claims\non first submission.',
+    body: "Our scrubbing engine flags coding gaps before claims leave your office. When denials happen, we work them — you don't.",
+    stat: { value: '98.4%', label: 'First-pass acceptance' },
+    image: 'https://images.unsplash.com/photo-1576091160550-2173dba999ef?w=1400&q=80&auto=format&fit=crop',
+    accent: 'sage',
+  },
+  {
+    id: 'compliance',
+    eyebrow: 'HIPAA & security',
+    title: 'Compliance handled,\nso you can stop worrying.',
+    body: 'SOC 2 Type II, HIPAA, and HITECH compliant. End-to-end encryption, granular audit logs, and a BAA on day one.',
+    stat: { value: 'SOC 2', label: 'Type II certified' },
+    image: 'https://images.unsplash.com/photo-1576091160399-112ba8d25d1f?w=1400&q=80&auto=format&fit=crop',
+    accent: 'navy',
+  },
+  {
+    id: 'credentialing',
+    eyebrow: 'Credentialing & enrollment',
+    title: 'From CAQH to first\npayment in under 60 days.',
+    body: 'We handle payer enrollment, re-credentialing, and CAQH attestations end-to-end. You stop chasing paperwork — and start seeing patients.',
+    stat: { value: '<60', label: 'Days to first payment' },
+    image: 'https://images.unsplash.com/photo-1582750433449-648ed127bb54?w=1400&q=80&auto=format&fit=crop',
+    accent: 'turquoise',
+  },
+  {
+    id: 'patient-portal',
+    eyebrow: 'Patient billing',
+    title: 'A patient billing experience\nthat actually gets paid.',
+    body: 'Branded statements, text-to-pay, and flexible plans. Patients settle balances 2.3× faster than industry average.',
+    stat: { value: '2.3×', label: 'Faster patient payments' },
+    image: 'https://images.unsplash.com/photo-1587854692152-cbe660dbde88?w=1400&q=80&auto=format&fit=crop',
+    accent: 'sage',
+  },
+  {
+    id: 'for-practices',
+    eyebrow: 'Built for independent practices',
+    title: 'Boutique service.\nEnterprise-grade results.',
+    body: 'A dedicated billing lead, no long-term contracts, and pricing that scales with you — not against you.',
+    stat: { value: '1:1', label: 'Dedicated billing lead' },
+    image: 'https://images.unsplash.com/photo-1631815589968-fdb09a223b1e?w=1400&q=80&auto=format&fit=crop',
+    accent: 'navy',
+  },
 ];
 
-function StepIcon({ state }) {
-    if (state === 'done') {
+const ACCENTS = {
+  turquoise: { bg: 'var(--rmh-turquoise)', ink: '#06322F' },
+  sage: { bg: 'var(--rmh-sage-deep)', ink: '#1F3A2A' },
+  navy: { bg: 'var(--rmh-navy)', ink: '#E6F2F4' },
+};
+
+const HEADLINE = 'Billing built for the\nway you actually practice.';
+const AUTOPLAY_MS = 4000;
+
+function SplitHeadline({ text }) {
+  const lines = text.split('\n');
+  return (
+    <span className="rmh-split">
+      {lines.map((line, li) => {
+        const words = line.split(' ');
         return (
-            <svg className="hm-check-svg" viewBox="0 0 24 24" fill="none"
-                stroke="var(--teal)" strokeWidth="2.5"
-                strokeLinecap="round" strokeLinejoin="round">
-                <polyline className="hm-check-path" points="20 6 9 17 4 12" />
+          <span className="rmh-split__line" key={li}>
+            {words.map((w, wi) => (
+              <span
+                className="rmh-split__word"
+                key={wi}
+                style={{ animationDelay: `${(li * 6 + wi) * 40}ms` }}
+              >
+                {w}
+                {wi < words.length - 1 ? ' ' : ''}
+              </span>
+            ))}
+          </span>
+        );
+      })}
+    </span>
+  );
+}
+
+function HeroCopy({ slide, idx, total, onSelect, slides }) {
+  return (
+    <div className="rmh-hero__copy">
+      <div className="rmh-hero__eyebrow">
+        <span className="rmh-hero__eyebrow-dot" />
+        <span className="rmh-hero__eyebrow-text">{slide.eyebrow}</span>
+        <span className="rmh-hero__eyebrow-count">
+          {String(idx + 1).padStart(2, '0')} / {String(total).padStart(2, '0')}
+        </span>
+      </div>
+
+      <h1 className="rmh-hero__title" key={slide.id}>
+        <SplitHeadline text={idx === 0 ? HEADLINE : slide.title} />
+      </h1>
+
+      <p className="rmh-hero__body" key={slide.id + '-body'}>{slide.body}</p>
+
+      <div className="rmh-hero__ctas">
+        <a className="rmh-btn rmh-btn--primary" href="/contact">
+          Get a free billing audit
+          <svg width="16" height="16" viewBox="0 0 16 16" fill="none" aria-hidden="true">
+            <path d="M3 8h10M9 4l4 4-4 4" stroke="currentColor" strokeWidth="1.6" strokeLinecap="round" strokeLinejoin="round" />
+          </svg>
+        </a>
+        <a className="rmh-btn rmh-btn--secondary" href="#how">
+          <svg width="14" height="14" viewBox="0 0 14 14" fill="none" aria-hidden="true">
+            <circle cx="7" cy="7" r="6" stroke="currentColor" strokeWidth="1.4" />
+            <path d="M5.5 4.5l4 2.5-4 2.5z" fill="currentColor" />
+          </svg>
+          See how it works
+        </a>
+      </div>
+
+      <ol className="rmh-hero__tabs" role="tablist" aria-label="Carousel slides">
+        {slides.map((s, i) => (
+          <li key={s.id}>
+            <button
+              role="tab"
+              aria-selected={i === idx}
+              className={'rmh-hero__tab' + (i === idx ? ' is-active' : '')}
+              onClick={() => onSelect(i)}
+            >
+              <span className="rmh-hero__tab-num">{String(i + 1).padStart(2, '0')}</span>
+              <span className="rmh-hero__tab-label">{s.eyebrow}</span>
+            </button>
+          </li>
+        ))}
+      </ol>
+    </div>
+  );
+}
+
+function HeroMedia({ slide, accent, progress }) {
+  return (
+    <div className="rmh-hero__media" key={slide.id}>
+      <div className="rmh-hero__image-wrap">
+        <img className="rmh-hero__image" src={slide.image} alt="" />
+        <div className="rmh-hero__image-tint" />
+      </div>
+
+      <div
+        className="rmh-hero__band"
+        style={{ background: accent.bg, color: accent.ink }}
+      >
+        <div className="rmh-hero__stat">
+          <div className="rmh-hero__stat-value">{slide.stat.value}</div>
+          <div className="rmh-hero__stat-label">{slide.stat.label}</div>
+        </div>
+        <div className="rmh-hero__band-meta">
+          <div className="rmh-hero__band-rows">
+            <span><em>SOC 2 Type II</em></span>
+            <span className="rmh-hero__dot" />
+            <span><em>HIPAA</em></span>
+            <span className="rmh-hero__dot" />
+            <span><em>HITRUST-aligned</em></span>
+          </div>
+          <a className="rmh-hero__band-link" href="#case">
+            Read the case study
+            <svg width="14" height="14" viewBox="0 0 14 14" fill="none" aria-hidden="true">
+              <path d="M3 7h8M7.5 3.5L11 7l-3.5 3.5" stroke="currentColor" strokeWidth="1.4" strokeLinecap="round" strokeLinejoin="round" />
             </svg>
-        );
-    }
-    if (state === 'active') {
-        return (
-            <div className="hm-spinner-ring">
-                <div className="hm-spinner-arc" />
-            </div>
-        );
-    }
-    // pending
-    return (
-        <div className="hm-step-pending-dot" />
-    );
+          </a>
+        </div>
+      </div>
+
+      <div className="rmh-hero__progress" aria-hidden="true">
+        <div className="rmh-hero__progress-fill" style={{ transform: `scaleX(${progress})` }} />
+      </div>
+    </div>
+  );
 }
 
 export default function HomeHero() {
-    const [mounted, setMounted]   = useState(false);
-    const [phase, setPhase]       = useState(2);   // start at phase 2 so viewers see the animation
-    const [showNotif, setShowNotif] = useState(false);
+  const [idx, setIdx] = useState(0);
+  const [paused, setPaused] = useState(false);
+  const [progress, setProgress] = useState(0);
+  const rafRef = useRef(0);
+  const startRef = useRef(0);
+  const pausedAccumRef = useRef(0);
+  const pauseStartRef = useRef(0);
 
-    useEffect(() => { setMounted(true); }, []);
+  const goTo = useCallback((next) => {
+    setIdx(((next % SLIDES.length) + SLIDES.length) % SLIDES.length);
+    setProgress(0);
+    startRef.current = (typeof performance !== 'undefined' ? performance.now() : 0);
+    pausedAccumRef.current = 0;
+  }, []);
 
-    useEffect(() => {
-        if (!mounted) return;
-
-        // Phase 3 = all done → show notification, then restart
-        if (phase === 3) {
-            setShowNotif(true);
-            const timer = setTimeout(() => {
-                setShowNotif(false);
-                setTimeout(() => setPhase(0), 600); // fade out then reset
-            }, 3200);
-            return () => clearTimeout(timer);
-        }
-
-        // Each active phase lasts 2.8 s then advances
-        const durations = [2400, 2600, 2800];
-        const timer = setTimeout(() => {
-            setPhase(p => p + 1);
-        }, durations[phase] ?? 2800);
-
-        return () => clearTimeout(timer);
-    }, [mounted, phase]);
-
-    const getStepState = (stepIndex) => {
-        if (stepIndex < phase) return 'done';
-        if (stepIndex === phase && phase < 3) return 'active';
-        return 'pending';
+  useEffect(() => {
+    startRef.current = performance.now();
+    pausedAccumRef.current = 0;
+    let cancelled = false;
+    const tick = (t) => {
+      if (cancelled) return;
+      if (paused) {
+        rafRef.current = requestAnimationFrame(tick);
+        return;
+      }
+      const elapsed = t - startRef.current - pausedAccumRef.current;
+      const p = Math.min(1, elapsed / AUTOPLAY_MS);
+      setProgress(p);
+      if (p >= 1) {
+        goTo(idx + 1);
+      } else {
+        rafRef.current = requestAnimationFrame(tick);
+      }
     };
+    rafRef.current = requestAnimationFrame(tick);
+    return () => { cancelled = true; cancelAnimationFrame(rafRef.current); };
+  }, [idx, paused, goTo]);
 
-    return (
-        <section className="hero-modern">
-            <div className="hero-modern-bg">
-                <div className="hm-gradient-1" />
-                <div className="hm-gradient-2" />
-                <div className="hm-grid" />
+  useEffect(() => {
+    if (paused) {
+      pauseStartRef.current = performance.now();
+    } else if (pauseStartRef.current) {
+      pausedAccumRef.current += performance.now() - pauseStartRef.current;
+      pauseStartRef.current = 0;
+    }
+  }, [paused]);
 
-                {/* Floating glowing tile particles */}
-                <div className="hm-tile" style={{ top: '12%',  left: '8%',  '--size': '52px', '--tx': '18px',  '--ty': '-22px', '--dur': '13s', '--delay': '0s',    '--opacity': '0.14', '--bg-opacity': '0.04' }} />
-                <div className="hm-tile" style={{ top: '68%',  left: '14%', '--size': '30px', '--tx': '-12px', '--ty': '-18px', '--dur': '9s',  '--delay': '1.4s',  '--opacity': '0.09', '--bg-opacity': '0.02' }} />
-                <div className="hm-tile" style={{ top: '35%',  left: '3%',  '--size': '20px', '--tx': '10px',  '--ty': '14px',  '--dur': '11s', '--delay': '2.8s',  '--opacity': '0.12', '--bg-opacity': '0.03' }} />
-                <div className="hm-tile" style={{ top: '80%',  left: '40%', '--size': '44px', '--tx': '-20px', '--ty': '-10px', '--dur': '16s', '--delay': '0.5s',  '--opacity': '0.08', '--bg-opacity': '0.02' }} />
-                <div className="hm-tile" style={{ top: '22%',  left: '55%', '--size': '26px', '--tx': '14px',  '--ty': '20px',  '--dur': '10s', '--delay': '3.5s',  '--opacity': '0.11', '--bg-opacity': '0.03' }} />
-                <div className="hm-tile" style={{ top: '55%',  left: '72%', '--size': '38px', '--tx': '-16px', '--ty': '-12px', '--dur': '14s', '--delay': '1s',    '--opacity': '0.10', '--bg-opacity': '0.025' }} />
-                <div className="hm-tile" style={{ top: '8%',   left: '78%', '--size': '22px', '--tx': '8px',   '--ty': '18px',  '--dur': '8s',  '--delay': '4.2s',  '--opacity': '0.13', '--bg-opacity': '0.03' }} />
-                <div className="hm-tile" style={{ top: '45%',  left: '90%', '--size': '56px', '--tx': '-22px', '--ty': '-8px',  '--dur': '18s', '--delay': '2s',    '--opacity': '0.07', '--bg-opacity': '0.02' }} />
-            </div>
+  useEffect(() => {
+    const onKey = (e) => {
+      if (e.key === 'ArrowRight') goTo(idx + 1);
+      else if (e.key === 'ArrowLeft') goTo(idx - 1);
+    };
+    window.addEventListener('keydown', onKey);
+    return () => window.removeEventListener('keydown', onKey);
+  }, [idx, goTo]);
 
-            <div className="container hm-container">
-                {/* ── Left content ── */}
-                <div className={`hm-content ${mounted ? 'animate-in' : ''}`}>
-                    <div className="hm-badge">
-                        <span className="hm-badge-dot" />
-                        HIPAA Compliant · US-Based · Trusted by 1,200+ Providers
-                    </div>
+  const slide = SLIDES[idx];
+  const accent = ACCENTS[slide.accent] || ACCENTS.turquoise;
 
-                    <h1 className="hm-title">
-                        Medical Billing That <br className="hidden-mobile" />
-                        <span className="hm-highlight">Maximizes Your Revenue</span>
-                    </h1>
-
-                    <p className="hm-desc">
-                        Stop losing 15–25% of your earned revenue to billing inefficiencies.
-                        RenoxMed delivers end-to-end revenue cycle management with a 98.3%
-                        clean claim rate — starting at just 2.95% of collections.
-                    </p>
-
-                    <div className="hm-actions" style={{ display: 'flex', gap: '16px' }}>
-                        <Link href="/contact" className="btn-modern btn-modern-primary" style={{ padding: '14px 28px', fontSize: '16px' }}>
-                            Get Free Practice Audit
-                            <svg width="20" height="20" viewBox="0 0 24 24" fill="none"
-                                stroke="currentColor" strokeWidth="2"
-                                strokeLinecap="round" strokeLinejoin="round"
-                                style={{ marginLeft: 8 }}>
-                                <line x1="5" y1="12" x2="19" y2="12" />
-                                <polyline points="12 5 19 12 12 19" />
-                            </svg>
-                        </Link>
-                        <a href="tel:8662007200" className="btn-modern btn-modern-outline" style={{ background: 'var(--white)', padding: '14px 28px', fontSize: '16px' }}>
-                            <svg width="18" height="18" viewBox="0 0 24 24" fill="none"
-                                stroke="currentColor" strokeWidth="2"
-                                strokeLinecap="round" strokeLinejoin="round"
-                                style={{ marginRight: 8 }}>
-                                <path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07
-                                    19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1
-                                    4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0
-                                    1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1
-                                    2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z" />
-                            </svg>
-                            (866) 200-7200
-                        </a>
-                    </div>
-
-                    <div className="hm-trust-metrics">
-                        <div className="hm-trust-item">
-                            <div className="hm-trust-val">98.3%</div>
-                            <div className="hm-trust-lbl">Clean Claim Rate</div>
-                        </div>
-                        <div className="hm-trust-divider" />
-                        <div className="hm-trust-item">
-                            <div className="hm-trust-val">18 Days</div>
-                            <div className="hm-trust-lbl">Avg. AR Turnaround</div>
-                        </div>
-                        <div className="hm-trust-divider" />
-                        <div className="hm-trust-item">
-                            <div className="hm-trust-val">Zero</div>
-                            <div className="hm-trust-lbl">Long-Term Contracts</div>
-                        </div>
-                    </div>
-                </div>
-
-                {/* ── Right visual card ── */}
-                <div className={`hm-visual ${mounted ? 'animate-in-delay' : ''}`}>
-                    <div className="hm-card glass-panel-premium">
-                        <div className="hm-card-glow" />
-
-                        <div className="hm-card-header">
-                            <div className="hm-card-title">Live Revenue Pipeline</div>
-                            <div className="hm-live-indicator">
-                                <span className="hm-live-dot" /> LIVE
-                            </div>
-                        </div>
-
-                        {/* Progress bar */}
-                        <div className="hm-progress-bar-wrap">
-                            <div
-                                className="hm-progress-bar-fill"
-                                style={{ width: `${Math.min(phase / 3 * 100, 100)}%` }}
-                            />
-                        </div>
-
-                        <div className="hm-pipeline">
-                            {PIPELINE_STEPS.map((step, i) => {
-                                const state = getStepState(i);
-                                return (
-                                    <div
-                                        key={step.id}
-                                        className={`hm-step hm-step-${state}`}
-                                        style={{ '--step-delay': `${i * 0.12}s` }}
-                                    >
-                                        <div className={`hm-step-icon-wrap ${state === 'active' ? 'hm-icon-active' : ''}`}>
-                                            <StepIcon state={state} />
-                                        </div>
-
-                                        <div className="hm-step-info">
-                                            <div className="hm-step-name">{step.name}</div>
-                                            <div className={`hm-step-status ${state === 'active' ? 'processing' : ''}`}>
-                                                {state === 'active' && <span className="hm-typing-dot" />}
-                                                {state === 'done'   ? step.sub.done   : ''}
-                                                {state === 'active' ? step.sub.active  : ''}
-                                                {state === 'pending' ? 'Waiting...'    : ''}
-                                            </div>
-                                        </div>
-
-                                        {state === 'done'   && <div className="hm-step-tag">Done</div>}
-                                        {state === 'active' && <div className="hm-step-tag hm-step-tag-active">Live</div>}
-                                        {state === 'pending'&& <div className="hm-step-tag hm-step-tag-pending">Queued</div>}
-                                    </div>
-                                );
-                            })}
-                        </div>
-
-                        {/* Floating approval notification */}
-                        <div className={`hm-notification ${showNotif ? 'hm-notif-show' : 'hm-notif-hide'}`}>
-                            <div className="hm-notif-icon">
-                                <svg viewBox="0 0 24 24" fill="none" stroke="var(--teal)" strokeWidth="2.5">
-                                    <polyline points="20 6 9 17 4 12" />
-                                </svg>
-                            </div>
-                            <div className="hm-notif-content">
-                                <strong>Claim #CF-9847 Approved</strong>
-                                <span>Aetna · $1,240 · Just now</span>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </section>
-    );
+  return (
+    <section
+      className="rmh-hero"
+      onMouseEnter={() => setPaused(true)}
+      onMouseLeave={() => setPaused(false)}
+    >
+      <div className="rmh-hero__grid">
+        <HeroCopy
+          slide={slide}
+          idx={idx}
+          total={SLIDES.length}
+          onSelect={goTo}
+          slides={SLIDES}
+        />
+        <HeroMedia slide={slide} accent={accent} progress={progress} />
+      </div>
+    </section>
+  );
 }
