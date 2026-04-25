@@ -8,10 +8,13 @@ export function FullFooter() {
         <footer className="site-footer">
             <div className="footer-top">
                 <div className="footer-brand">
-                    <Link href="/" className="nav-logo" style={{ marginBottom: '24px', display: 'inline-flex', alignItems: 'center' }}>
-                        <img src="/logo-transparent.png" alt="RenoxMed" style={{ height: '110px', width: 'auto', display: 'block' }} />
+                    <Link href="/" className="nav-logo" style={{ marginBottom: '24px', display: 'flex', flexDirection: 'column', alignItems: 'flex-start', gap: '0' }}>
+                        <div style={{ height: '70px', overflow: 'hidden', display: 'flex', alignItems: 'flex-start' }}>
+                            <img src="/logo-transparent.png" alt="RenoxMed" style={{ height: '90px', width: 'auto', maxWidth: 'none', display: 'block' }} />
+                        </div>
+                        <span style={{ fontSize: '15px', color: 'var(--teal)', fontWeight: '600', marginTop: '-2px', marginLeft: '6px' }}>Transforming Healthcare Revenue</span>
                     </Link>
-                    <p>US-based revenue cycle management for healthcare providers of all sizes. HIPAA-compliant since 2012. Starting at 2.95% of monthly collections.</p>
+                    <p>US-based revenue cycle management for healthcare providers of all sizes. HIPAA-compliant since 2018. Starting at a fixed percentage of monthly collections.</p>
                     <div className="footer-certif">
                         <div className="certif-badge"><span className="cb-ico">🔒</span>HIPAA</div>
                         <div className="certif-badge"><span className="cb-ico">🛡️</span>SOC 2</div>
@@ -62,7 +65,7 @@ export function FullFooter() {
                     <h5>Contact</h5>
                     <div className="footer-contact-item"><div className="fci-ico">📞</div><div><div className="fci-label">Phone</div><div className="fci-val">(866) 200-7200</div></div></div>
                     <div className="footer-contact-item"><div className="fci-ico">📧</div><div><div className="fci-label">Email</div><div className="fci-val">info@renoxmed.com</div></div></div>
-                    <div className="footer-contact-item"><div className="fci-ico">📍</div><div><div className="fci-label">Office</div><div className="fci-val">Dallas, TX 75201</div></div></div>
+                    <div className="footer-contact-item"><div className="fci-ico">📍</div><div><div className="fci-label">Office</div><div className="fci-val">Ohio, USA 4502</div></div></div>
                     <div className="footer-newsletter">
                         <p>Subscribe to billing updates:</p>
                         <div className="newsletter-form">

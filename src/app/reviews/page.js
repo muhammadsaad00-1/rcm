@@ -4,11 +4,11 @@ import PageHero from '@/components/PageHero';
 import { MiniFooter } from '@/components/Footer';
 
 const reviews = [
-    { text: '"RenoxMed dropped our denial rate from 14% to under 2% in just 60 days. We recovered over $180,000 in revenue we didn\'t know we were losing."', name: 'Dr. Rachel Torres, MD', role: 'Cardiology Associates · Dallas, TX', init: 'RT', bg: 'linear-gradient(135deg,#0B1437,#162257)' },
+    { text: '"RenoxMed dropped our denial rate from 14% to under 2% in just 60 days. We recovered over $180,000 in revenue we didn\'t know we were losing."', name: 'Dr. Rachel Torres, MD', role: 'Cardiology Associates · Ohio, USA', init: 'RT', bg: 'linear-gradient(135deg,#0B1437,#162257)' },
     { text: '"Our AR days dropped from 58 to 19 within the first quarter. The specialty coding expertise is exactly what a 3-location orthopedic group needs."', name: 'James Kowalski', role: 'Admin Director · Summit Orthopedics · IL', init: 'JK', bg: 'linear-gradient(135deg,#00C9A7,#0B1437)' },
     { text: '"Zero telehealth claim denials in 9 months. They stay ahead of every payer-specific rule change before it impacts our collections."', name: 'Dr. Anita Patel, LCSW', role: 'ClearMind Behavioral Health · CA', init: 'AP', bg: 'linear-gradient(135deg,#F5A623,#C17D00)' },
     { text: '"The transition took 11 days and we didn\'t miss a single claim. Our collections increased 24% in the first 6 months."', name: 'Dr. Michael Brown', role: 'Family Practice · Atlanta, GA', init: 'MB', bg: 'linear-gradient(135deg,#27AE60,#1A7040)' },
-    { text: '"As a nephrology practice with complex dialysis billing, RenoxMed\'s specialty expertise is unmatched. They know every ESRD billing nuance."', name: 'Dr. Sarah Kim, MD', role: 'Chicago Kidney Center · Chicago, IL', init: 'SK', bg: 'linear-gradient(135deg,#E8534B,#9B2020)' },
+    { text: '"As a behavioral health practice with complex billing, RenoxMed\'s specialty expertise is unmatched. They know every clinical nuance and payer rule."', name: 'Dr. Sarah Kim, MD', role: 'Psychiatry Center · Chicago, IL', init: 'SK', bg: 'linear-gradient(135deg,#E8534B,#9B2020)' },
     { text: '"The real-time dashboard is a game changer. I can see every claim status, denial, and payment from my phone. Total transparency."', name: 'Thomas Walsh, MBA', role: 'Practice Administrator · Midwest Urgent Care', init: 'TW', bg: 'linear-gradient(135deg,#0B1437,#162257)' },
     { text: '"We switched from a big-name billing company and immediately saw a 31% jump in collections. RenoxMed actually cares about your revenue."', name: 'Dr. Lisa Chen, DPM', role: 'Metro Podiatry Group · New York, NY', init: 'LC', bg: 'linear-gradient(135deg,#9B59B6,#6C3483)' },
     { text: '"Their credentialing team got us enrolled with 12 new payers in under 60 days. Not a single application was rejected."', name: 'Amanda Rodriguez, MBA', role: 'Desert Dermatology · Phoenix, AZ', init: 'AR', bg: 'linear-gradient(135deg,#2980B9,#1A5276)' },
@@ -19,7 +19,7 @@ export default function ReviewsPage() {
     return (
         <>
             <Breadcrumb items={[{ label: 'Home', href: '/' }, { label: 'Client Reviews' }]} />
-            <PageHero tag="⭐ Reviews" title="What Our Clients" titleAccent="Say About Us" description="1,200+ providers trust RenoxMed with their revenue cycle. Share your experience or read what others have to say." />
+            <PageHero tag="⭐ Reviews" title="What Our Clients" titleAccent="Say About Us" description="Multiple providers trust RenoxMed with their revenue cycle. Share your experience or read what others have to say." />
 
             {/* Leave a Review Form — ON TOP */}
             <section className="section" style={{ background: 'linear-gradient(180deg, var(--teal-soft) 0%, var(--off) 100%)' }}>
@@ -38,7 +38,7 @@ export default function ReviewsPage() {
                             <div className="cform-sub">All fields marked * are required</div>
                             <div className="form-row"><div className="form-group"><label>Your Name *</label><input type="text" placeholder="Dr. Jane Smith" /></div><div className="form-group"><label>Your Title / Role *</label><input type="text" placeholder="Practice Owner, Admin Director..." /></div></div>
                             <div className="form-group"><label>Practice Name *</label><input type="text" placeholder="Your Practice Name" /></div>
-                            <div className="form-group"><label>Specialty</label><select><option>Select Specialty</option><option>Cardiology</option><option>Orthopedics</option><option>Family Practice</option><option>Internal Medicine</option><option>Pediatrics</option><option>Neurology</option><option>Nephrology</option><option>Urgent Care</option><option>Other</option></select></div>
+                            <div className="form-group"><label>Specialty</label><select><option>Select Specialty</option><option>Cardiology</option><option>Orthopedics</option><option>Family Practice</option><option>Internal Medicine</option><option>Pediatrics</option><option>Neurology</option><option>Behavioral Specialty</option><option>Urgent Care</option><option>Other</option></select></div>
                             <div className="form-group"><label>Rating *</label>
                                 <div style={{ display: 'flex', gap: 6, fontSize: 28, color: 'var(--gold)', cursor: 'pointer' }}>
                                     {[1,2,3,4,5].map(s => <span key={s}>★</span>)}

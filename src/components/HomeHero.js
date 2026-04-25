@@ -6,17 +6,17 @@ const SLIDES = [
     id: 'reimbursement',
     eyebrow: 'Revenue cycle, accelerated',
     title: 'Get paid faster,\nwith fewer write-offs.',
-    body: 'Independent practices using RenoxMed cut average AR days by 38% in the first 90 days — without hiring more billers.',
-    stat: { value: '38%', label: 'Avg. AR days reduction' },
+    body: 'Independent practices using RenoxMed significantly cut average AR days in the first 90 days — without hiring more billers.',
+    stat: { value: 'Significant', label: 'Avg. AR days reduction' },
     image: 'https://images.unsplash.com/photo-1551601651-2a8555f1a136?w=1400&q=80&auto=format&fit=crop',
     accent: 'turquoise',
   },
   {
     id: 'denials',
     eyebrow: 'Denial management',
-    title: '98.4% clean-claims\non first submission.',
+    title: 'High percentage clean-claims\non first submission.',
     body: "Our scrubbing engine flags coding gaps before claims leave your office. When denials happen, we work them — you don't.",
-    stat: { value: '98.4%', label: 'First-pass acceptance' },
+    stat: { value: 'High Rate', label: 'First-pass acceptance' },
     image: 'https://images.unsplash.com/photo-1576091160550-2173dba999ef?w=1400&q=80&auto=format&fit=crop',
     accent: 'sage',
   },
@@ -26,15 +26,15 @@ const SLIDES = [
     title: 'Compliance handled,\nso you can stop worrying.',
     body: 'SOC 2 Type II, HIPAA, and HITECH compliant. End-to-end encryption, granular audit logs, and a BAA on day one.',
     stat: { value: 'SOC 2', label: 'Type II certified' },
-    image: 'https://images.unsplash.com/photo-1576091160399-112ba8d25d1f?w=1400&q=80&auto=format&fit=crop',
+    image: '/images/hipaa-security.png',
     accent: 'navy',
   },
   {
     id: 'credentialing',
     eyebrow: 'Credentialing & enrollment',
-    title: 'From CAQH to first\npayment in under 60 days.',
+    title: 'From CAQH to first\npayment rapidly.',
     body: 'We handle payer enrollment, re-credentialing, and CAQH attestations end-to-end. You stop chasing paperwork — and start seeing patients.',
-    stat: { value: '<60', label: 'Days to first payment' },
+    stat: { value: 'Rapid', label: 'Days to first payment' },
     image: 'https://images.unsplash.com/photo-1582750433449-648ed127bb54?w=1400&q=80&auto=format&fit=crop',
     accent: 'turquoise',
   },
@@ -42,8 +42,8 @@ const SLIDES = [
     id: 'patient-portal',
     eyebrow: 'Patient billing',
     title: 'A patient billing experience\nthat actually gets paid.',
-    body: 'Branded statements, text-to-pay, and flexible plans. Patients settle balances 2.3× faster than industry average.',
-    stat: { value: '2.3×', label: 'Faster patient payments' },
+    body: 'Branded statements, text-to-pay, and flexible plans. Patients settle balances faster than industry average.',
+    stat: { value: 'Faster', label: 'Patient payments' },
     image: 'https://images.unsplash.com/photo-1587854692152-cbe660dbde88?w=1400&q=80&auto=format&fit=crop',
     accent: 'sage',
   },
@@ -116,12 +116,11 @@ function HeroCopy({ slide, idx, total, onSelect, slides }) {
             <path d="M3 8h10M9 4l4 4-4 4" stroke="currentColor" strokeWidth="1.6" strokeLinecap="round" strokeLinejoin="round" />
           </svg>
         </a>
-        <a className="rmh-btn rmh-btn--secondary" href="#how">
+        <a className="rmh-btn rmh-btn--secondary" href="/specialties">
           <svg width="14" height="14" viewBox="0 0 14 14" fill="none" aria-hidden="true">
-            <circle cx="7" cy="7" r="6" stroke="currentColor" strokeWidth="1.4" />
-            <path d="M5.5 4.5l4 2.5-4 2.5z" fill="currentColor" />
+            <path d="M2.5 7h9M7.5 3.5L11 7l-3.5 3.5" stroke="currentColor" strokeWidth="1.4" strokeLinecap="round" strokeLinejoin="round" />
           </svg>
-          See how it works
+          Explore Specialties
         </a>
       </div>
 

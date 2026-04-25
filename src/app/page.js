@@ -14,11 +14,11 @@ const CheckSVG = () => (
 
 /* ── Testimonial card data (9 reviews) ── */
 const testimonials = [
-  { text: "RenoxMed dropped our denial rate from 14% to under 2% in just 60 days. We recovered over $180,000 in revenue we didn't know we were losing.", name: 'Dr. Rachel Torres, MD', role: 'Cardiology Associates · Dallas, TX', init: 'RT', bg: 'linear-gradient(135deg, #0B1437, #162257)' },
+  { text: "RenoxMed dropped our denial rate from 14% to under 2% in just 60 days. We recovered over $180,000 in revenue we didn't know we were losing.", name: 'Dr. Rachel Torres, MD', role: 'Cardiology Associates · Ohio, USA', init: 'RT', bg: 'linear-gradient(135deg, #0B1437, #162257)' },
   { text: "Our AR days dropped from 58 to 19 within the first quarter. The specialty coding expertise is exactly what a 3-location orthopedic group needs.", name: 'James Kowalski', role: 'Summit Orthopedics · 3 Locations · IL', init: 'JK', bg: 'linear-gradient(135deg, #00C9A7, #0B1437)' },
   { text: "Zero telehealth claim denials in 9 months. They stay ahead of every payer-specific rule change before it impacts our collections.", name: 'Dr. Anita Patel, LCSW', role: 'ClearMind Behavioral Health · CA', init: 'AP', bg: 'linear-gradient(135deg, #F5A623, #C17D00)' },
   { text: "The transition took 11 days and we didn't miss a single claim. Our collections increased 24% in the first 6 months.", name: 'Dr. Michael Brown', role: 'Brown Family Practice · Atlanta, GA', init: 'MB', bg: 'linear-gradient(135deg, #27AE60, #1A7040)' },
-  { text: "As a nephrology practice with complex dialysis billing, RenoxMed's specialty expertise is unmatched. They know every ESRD billing nuance.", name: 'Dr. Sarah Kim, MD', role: 'Chicago Kidney Center · Chicago, IL', init: 'SK', bg: 'linear-gradient(135deg, #E8534B, #9B2020)' },
+  { text: "As a behavioral health practice with complex billing, RenoxMed's specialty expertise is unmatched. They know every clinical nuance and payer rule.", name: 'Dr. Sarah Kim, MD', role: 'Psychiatry Center · Chicago, IL', init: 'SK', bg: 'linear-gradient(135deg, #E8534B, #9B2020)' },
   { text: "The real-time dashboard is a game changer. I can see every claim status, denial, and payment from my phone. Total transparency.", name: 'Thomas Walsh, MBA', role: 'Practice Admin · Midwest Urgent Care', init: 'TW', bg: 'linear-gradient(135deg, #0B1437, #162257)' },
   { text: "We switched from a big-name billing company and immediately saw a 31% jump in collections. RenoxMed actually cares about your revenue.", name: 'Dr. Lisa Chen, DPM', role: 'Metro Podiatry Group · New York, NY', init: 'LC', bg: 'linear-gradient(135deg, #9B59B6, #6C3483)' },
   { text: "Their credentialing team got us enrolled with 12 new payers in under 60 days. Not a single application was rejected.", name: 'Amanda Rodriguez, MBA', role: 'Desert Dermatology · Phoenix, AZ', init: 'AR', bg: 'linear-gradient(135deg, #2980B9, #1A5276)' },
@@ -33,7 +33,7 @@ const specialties = [
   { emoji: '🩺', name: 'Family Practice', tag: 'Primary · Preventive Care', desc: 'Comprehensive billing for office visits, wellness exams, chronic care management, and preventive services. We ensure proper E/M leveling and capture every billable service.' },
   { emoji: '👶', name: 'Pediatrics', tag: 'Primary · Neonatology', desc: 'Pediatric-specific billing expertise covering well-child visits, immunization administration, developmental screenings, and complex neonatal ICU coding.' },
   { emoji: '🔬', name: 'Internal Medicine', tag: 'Chronic Disease Management', desc: 'Optimized billing for chronic condition management, transitional care, and complex medical decision-making. We capture CCM, TCM, and AWV codes often missed by generic billers.' },
-  { emoji: '💊', name: 'Nephrology', tag: 'Dialysis · ESRD Billing', desc: 'Deep expertise in ESRD MCP billing, dialysis treatments, vascular access procedures, and the monthly capitated payment model. We handle CMS composite rate calculations precisely.' },
+  { emoji: '🧠', name: 'Behavioral Specialty', tag: 'Psychiatry · Therapy Billing', desc: 'Expert billing for mental health services, including complex psychotherapy coding and telehealth reimbursement. We handle payer-specific requirements for behavioral health.' },
   { emoji: '🏥', name: 'Urgent Care', tag: 'Multi-Site · Walk-In Billing', desc: 'High-volume, multi-site billing with rapid turnaround. We handle E/M coding, X-rays, lab work, procedures, and occupational medicine billing across all your locations.' },
 ];
 
@@ -60,10 +60,10 @@ export default function HomePage() {
       {/* ═══ 2. STATS ROW ═══ */}
       <div className="container">
         <div className="stats-row" style={{ marginTop: -40, position: 'relative', zIndex: 3 }}>
-          <div className="stat-item"><div className="stat-num">$<em>2.8</em>B+</div><div className="stat-label">Claims Processed</div></div>
-          <div className="stat-item"><div className="stat-num"><em>98.3</em>%</div><div className="stat-label">Clean Claim Rate</div></div>
-          <div className="stat-item"><div className="stat-num"><em>1,200</em>+</div><div className="stat-label">Provider Clients</div></div>
-          <div className="stat-item"><div className="stat-num"><em>40</em>+</div><div className="stat-label">Specialties Served</div></div>
+          <div className="stat-item"><div className="stat-num"><em>Millions</em>+</div><div className="stat-label">Claims Processed</div></div>
+          <div className="stat-item"><div className="stat-num"><em>High</em>%</div><div className="stat-label">Clean Claim Rate</div></div>
+          <div className="stat-item"><div className="stat-num"><em>Multiple</em></div><div className="stat-label">Provider Clients</div></div>
+          <div className="stat-item"><div className="stat-num"><em>Many</em></div><div className="stat-label">Specialties Served</div></div>
         </div>
       </div>
 
@@ -82,7 +82,7 @@ export default function HomePage() {
           </div>
           <div className="svc-overview-grid">
             <Link href="/services/audit" className="svc-ov-card"><div className="svc-ov-ico">🔎</div><h3>Medical Billing Audit</h3><p>Comprehensive review of your billing to uncover lost revenue, compliance risks and coding errors.</p><div className="svc-link">Learn More →</div></Link>
-            <Link href="/services/billing" className="svc-ov-card"><div className="svc-ov-ico">🏷️</div><h3>Medical Billing</h3><p>Clean claim preparation and electronic submission to 2,500+ payers within 48 hours of service.</p><div className="svc-link">Learn More →</div></Link>
+            <Link href="/services/billing" className="svc-ov-card"><div className="svc-ov-ico">🏷️</div><h3>Medical Billing</h3><p>Clean claim preparation and electronic submission to multiple payers within 48 hours of service.</p><div className="svc-link">Learn More →</div></Link>
             <Link href="/services/eligibility" className="svc-ov-card"><div className="svc-ov-ico">✅</div><h3>Eligibility Verification</h3><p>Real-time insurance benefit verification before every visit — eliminating avoidable denials at the source.</p><div className="svc-link">Learn More →</div></Link>
             <Link href="/services/denial" className="svc-ov-card"><div className="svc-ov-ico">🚫</div><h3>Denial Management</h3><p>Rapid appeal and resubmission of denied claims with root-cause analysis to prevent future denials.</p><div className="svc-link">Learn More →</div></Link>
             <Link href="/services/ar" className="svc-ov-card"><div className="svc-ov-ico">💰</div><h3>Account Receivable</h3><p>Aggressive follow-up on aged claims to maximize collections and reduce your overall AR days.</p><div className="svc-link">Learn More →</div></Link>
@@ -103,10 +103,10 @@ export default function HomePage() {
               <h2 className="sec-title">What Makes Us Different From Every Other Billing Company</h2>
               <p className="sec-sub" style={{ marginBottom: 32 }}>We replaced the old-school billing company model with a technology-first, specialty-aware approach that consistently outperforms industry benchmarks.</p>
               <div className="stats-row" style={{ gridTemplateColumns: '1fr 1fr', marginTop: 0, borderRadius: 'var(--r-lg)' }}>
-                <div className="stat-item"><div className="stat-num"><em>+21%</em></div><div className="stat-label">Avg Revenue Increase</div></div>
-                <div className="stat-item"><div className="stat-num"><em>18</em> days</div><div className="stat-label">Average AR Days</div></div>
-                <div className="stat-item"><div className="stat-num"><em>48</em> hrs</div><div className="stat-label">Claim Submission</div></div>
-                <div className="stat-item"><div className="stat-num"><em>300+</em></div><div className="stat-label">EHR Integrations</div></div>
+                <div className="stat-item"><div className="stat-num"><em>High</em></div><div className="stat-label">Avg Revenue Increase</div></div>
+                <div className="stat-item"><div className="stat-num"><em>Sub-20</em> days</div><div className="stat-label">Average AR Days</div></div>
+                <div className="stat-item"><div className="stat-num"><em>Rapid</em></div><div className="stat-label">Claim Submission</div></div>
+                <div className="stat-item"><div className="stat-num"><em>Many</em></div><div className="stat-label">EHR Integrations</div></div>
               </div>
               <div style={{ marginTop: 28, display: 'flex', gap: 12, flexWrap: 'wrap' }}>
                 <Link href="/contact" className="btn-modern btn-modern-primary">Start With a Free Audit</Link>
@@ -136,7 +136,7 @@ export default function HomePage() {
           </div>
           <div className="provider-content">
             <div className="sec-label">About RenoxMed</div>
-            <h2>Trusted by <em>1,200+</em> Healthcare Providers Nationwide</h2>
+            <h2>Trusted by <em>Multiple</em> Healthcare Providers Nationwide</h2>
             <p>With over a decade of experience, RenoxMed delivers end-to-end revenue cycle management that maximizes reimbursements and minimizes claim denials. Our specialty-certified billing experts understand the nuances of your practice and work tirelessly to ensure every dollar you earn reaches your bottom line.</p>
             <div className="provider-actions">
               <Link href="/contact" className="btn-modern btn-modern-primary">Make an Appointment</Link>
@@ -151,7 +151,7 @@ export default function HomePage() {
         <div className="container">
           <div className="center" style={{ marginBottom: 44 }}>
             <div className="sec-label" style={{ justifyContent: 'center', display: 'flex', color: 'var(--teal)' }}>Specialties</div>
-            <h2 className="sec-title" style={{ color: 'white' }}>Billing Expertise Across 40+ Medical Specialties</h2>
+            <h2 className="sec-title" style={{ color: 'white' }}>Billing Expertise Across Many Medical Specialties</h2>
             <p className="sec-sub" style={{ margin: '0 auto', color: 'rgba(255,255,255,.5)' }}>Our certified billers speak your specialty&apos;s coding language — from complex cardiology to behavioral health.</p>
           </div>
           <div className="spec-grid">
@@ -169,7 +169,7 @@ export default function HomePage() {
             ))}
           </div>
           <div className="center" style={{ marginTop: 36 }}>
-            <Link href="/specialties" className="btn-modern btn-modern-secondary" style={{ background: 'white', color: 'var(--navy)' }}>View All 40+ Specialties →</Link>
+            <Link href="/specialties" className="btn-modern btn-modern-secondary" style={{ background: 'white', color: 'var(--navy)' }}>View All Specialties →</Link>
           </div>
         </div>
       </section>
@@ -212,8 +212,8 @@ export default function HomePage() {
             <div className="teal-bar"></div>
             <p>RenoxMed is a leading medical billing company providing comprehensive RCM solution at cost-effective rates.</p>
             <ul className="why-work-checklist">
-              <li><span className="check-circle"><CheckSVG /></span>Less Than 1% Rejections</li>
-              <li><span className="check-circle"><CheckSVG /></span>99% Claim Acceptance Rate</li>
+              <li><span className="check-circle"><CheckSVG /></span>Minimal Rejections</li>
+              <li><span className="check-circle"><CheckSVG /></span>High Claim Acceptance Rate</li>
               <li><span className="check-circle"><CheckSVG /></span>100% HIPAA Compliant Process</li>
               <li><span className="check-circle"><CheckSVG /></span>Robust Practice Medical Billing Audits</li>
               <li><span className="check-circle"><CheckSVG /></span>Enhance Cash Flow And Reduce Billing Errors</li>

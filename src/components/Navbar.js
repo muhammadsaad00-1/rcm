@@ -23,7 +23,7 @@ export default function Navbar() {
                 <div className="topbar-left">
                     <div className="tb-item"><span>📞</span>&nbsp;<a href="tel:8662007200" style={{ color: 'rgba(255,255,255,.6)' }}>(866) 200-7200</a></div>
                     <div className="tb-item"><span>✉</span>&nbsp;<a href="mailto:info@renoxmed.com" style={{ color: 'rgba(255,255,255,.6)' }}>info@renoxmed.com</a></div>
-                    <div className="tb-item"><span>📍</span>&nbsp;Dallas, TX USA</div>
+                    <div className="tb-item"><span>📍</span>&nbsp;Ohio, USA</div>
                 </div>
                 <div className="topbar-right">
                     <a>HIPAA Compliant</a>
@@ -36,8 +36,11 @@ export default function Navbar() {
             {/* Nav */}
             <nav className="site-nav">
                 <div className="nav-inner">
-                    <Link href="/" className="nav-logo">
-                        <img src="/logo-transparent.png" alt="RenoxMed" className="logo-img-main" />
+                    <Link href="/" className="nav-logo" style={{ display: 'flex', flexDirection: 'column', alignItems: 'flex-start', gap: '0' }}>
+                        <div style={{ height: '52px', overflow: 'hidden', display: 'flex', alignItems: 'flex-start' }}>
+                            <img src="/logo-transparent.png" alt="RenoxMed" style={{ height: '70px', width: 'auto', maxWidth: 'none', display: 'block' }} />
+                        </div>
+                        <span className="logo-tagline" style={{ fontSize: '13px', color: 'var(--teal)', fontWeight: '600', marginTop: '-4px', marginLeft: '5px' }}>Transforming Healthcare Revenue</span>
                     </Link>
 
                     <ul className="nav-menu">
@@ -80,7 +83,7 @@ export default function Navbar() {
                                     </div>
                                     <Link href="/specialties" className="dd-item" style={{ background: 'var(--teal-soft)', borderRadius: 8, marginTop: 6 }}>
                                         <div className="dd-icon" style={{ background: 'var(--teal-mid)' }}>🏥</div>
-                                        <div><div className="dd-item-title">View All 40+ Specialties →</div><div className="dd-item-sub">Nephrology, Urgent Care, Oncology, and more</div></div>
+                                        <div><div className="dd-item-title">View All 40+ Specialties →</div><div className="dd-item-sub">Behavioral Specialty, Urgent Care, Oncology, and more</div></div>
                                     </Link>
                                 </div>
                             </div>
