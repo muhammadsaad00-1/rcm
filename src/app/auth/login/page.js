@@ -41,7 +41,8 @@ function LoginForm() {
       .single();
 
     if (userError) {
-      setError('Failed to fetch user details');
+      console.error('Supabase DB Error:', userError);
+      setError(`Failed to fetch user details: ${userError.message || userError.details || 'Unknown database error'}. Please verify your Supabase tables.`);
       setLoading(false);
       return;
     }
@@ -106,7 +107,7 @@ function LoginForm() {
           </div>
           <div className="remember-row">
             <label><input type="checkbox" /> Remember me</label>
-            <a style={{ cursor: 'pointer' }}>Forgot password?</a>
+            <Link href="/auth/forgot-password" style={{ cursor: 'pointer', textDecoration: 'none', color: 'var(--teal)' }}>Forgot password?</Link>
           </div>
           <button type="submit" className="form-submit" disabled={loading}>
             {loading ? 'Signing in...' : 'Sign In →'}

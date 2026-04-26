@@ -60,10 +60,10 @@ export default function HomePage() {
       {/* ═══ 2. STATS ROW ═══ */}
       <div className="container">
         <div className="stats-row" style={{ marginTop: -40, position: 'relative', zIndex: 3 }}>
-          <div className="stat-item"><div className="stat-num"><em>Millions</em>+</div><div className="stat-label">Claims Processed</div></div>
-          <div className="stat-item"><div className="stat-num"><em>High</em>%</div><div className="stat-label">Clean Claim Rate</div></div>
-          <div className="stat-item"><div className="stat-num"><em>Multiple</em></div><div className="stat-label">Provider Clients</div></div>
-          <div className="stat-item"><div className="stat-num"><em>Many</em></div><div className="stat-label">Specialties Served</div></div>
+          <div className="stat-item"><div className="stat-num"><em>150k</em>+</div><div className="stat-label">Claims Processed</div></div>
+          <div className="stat-item"><div className="stat-num"><em>98</em>%</div><div className="stat-label">Clean Claim Rate</div></div>
+          <div className="stat-item"><div className="stat-num"><em>75</em>+</div><div className="stat-label">Provider Clients</div></div>
+          <div className="stat-item"><div className="stat-num"><em>15</em>+</div><div className="stat-label">Specialties Served</div></div>
         </div>
       </div>
 
@@ -103,10 +103,10 @@ export default function HomePage() {
               <h2 className="sec-title">What Makes Us Different From Every Other Billing Company</h2>
               <p className="sec-sub" style={{ marginBottom: 32 }}>We replaced the old-school billing company model with a technology-first, specialty-aware approach that consistently outperforms industry benchmarks.</p>
               <div className="stats-row" style={{ gridTemplateColumns: '1fr 1fr', marginTop: 0, borderRadius: 'var(--r-lg)' }}>
-                <div className="stat-item"><div className="stat-num"><em>High</em></div><div className="stat-label">Avg Revenue Increase</div></div>
+                <div className="stat-item"><div className="stat-num"><em>25%</em></div><div className="stat-label">Avg Revenue Increase</div></div>
                 <div className="stat-item"><div className="stat-num"><em>Sub-20</em> days</div><div className="stat-label">Average AR Days</div></div>
-                <div className="stat-item"><div className="stat-num"><em>Rapid</em></div><div className="stat-label">Claim Submission</div></div>
-                <div className="stat-item"><div className="stat-num"><em>Many</em></div><div className="stat-label">EHR Integrations</div></div>
+                <div className="stat-item"><div className="stat-num"><em>48hr</em></div><div className="stat-label">Claim Submission</div></div>
+                <div className="stat-item"><div className="stat-num"><em>40+</em></div><div className="stat-label">EHR Integrations</div></div>
               </div>
               <div style={{ marginTop: 28, display: 'flex', gap: 12, flexWrap: 'wrap' }}>
                 <Link href="/contact" className="btn-modern btn-modern-primary">Start With a Free Audit</Link>
@@ -136,7 +136,7 @@ export default function HomePage() {
           </div>
           <div className="provider-content">
             <div className="sec-label">About RenoxMed</div>
-            <h2>Trusted by <em>Multiple</em> Healthcare Providers Nationwide</h2>
+            <h2>Trusted by <em>75+</em> Healthcare Providers Nationwide</h2>
             <p>With over a decade of experience, RenoxMed delivers end-to-end revenue cycle management that maximizes reimbursements and minimizes claim denials. Our specialty-certified billing experts understand the nuances of your practice and work tirelessly to ensure every dollar you earn reaches your bottom line.</p>
             <div className="provider-actions">
               <Link href="/contact" className="btn-modern btn-modern-primary">Make an Appointment</Link>
@@ -219,15 +219,15 @@ export default function HomePage() {
               <li><span className="check-circle"><CheckSVG /></span>Enhance Cash Flow And Reduce Billing Errors</li>
             </ul>
           </div>
-          <div className="consultation-form-card">
-            <ContactForm 
-              title="Get Free Consultation"
-              subtitle="No obligation · hear back in 2 hours"
-              includeSpecialty={false}
-              includeEHR={false}
-              submitButtonText="Send Consultation Request"
-              recipientEmail="ms01.saad@gmail.com"
-            />
+          <div className="why-work-right" style={{ display: 'flex', flexDirection: 'column', justifyContent: 'center', alignItems: 'center', background: 'var(--white)', padding: '48px 32px', borderRadius: '16px', textAlign: 'center', border: '1px solid var(--border)' }}>
+            <div style={{ fontSize: '48px', marginBottom: '16px' }}>📋</div>
+            <h3 style={{ color: 'var(--navy)', marginBottom: '12px', fontSize: '24px' }}>Ready for a Free Consultation?</h3>
+            <p style={{ color: 'var(--gray4)', marginBottom: '32px', lineHeight: '1.6' }}>
+              Let our billing specialists analyze your revenue cycle and identify areas for immediate cash flow improvement. No obligation.
+            </p>
+            <Link href="/contact" className="btn-modern btn-modern-primary" style={{ padding: '16px 32px', fontSize: '16px', width: '100%', maxWidth: '300px' }}>
+              Go to Contact Us Form →
+            </Link>
           </div>
         </div>
       </section>

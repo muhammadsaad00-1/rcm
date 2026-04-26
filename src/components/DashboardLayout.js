@@ -22,6 +22,7 @@ export default function DashboardLayout({ children, user, role }) {
       { name: 'Claims', href: '/claims', icon: '📄' },
       { name: 'Payments', href: '/payments', icon: '💳' },
       { name: 'Reports', href: '/admin/reports', icon: '📈' },
+      { name: 'Contact Us', href: '/contact', icon: '📞' },
     ],
     billing: [
       { name: 'Dashboard', href: '/billing/dashboard', icon: '📊' },
@@ -29,17 +30,20 @@ export default function DashboardLayout({ children, user, role }) {
       { name: 'Denials', href: '/denials', icon: '🚫' },
       { name: 'Payments', href: '/payments', icon: '💳' },
       { name: 'Patients', href: '/patients', icon: '🏥' },
+      { name: 'Contact Us', href: '/contact', icon: '📞' },
     ],
     support: [
       { name: 'Dashboard', href: '/dashboard', icon: '📊' },
       { name: 'Patients', href: '/patients', icon: '🏥' },
       { name: 'Insurance', href: '/insurance', icon: '🛡️' },
+      { name: 'Contact Us', href: '/contact', icon: '📞' },
     ],
     finance: [
       { name: 'Dashboard', href: '/payments/dashboard', icon: '📊' },
       { name: 'Payments', href: '/payments', icon: '💳' },
       { name: 'Reports', href: '/reports', icon: '📈' },
       { name: 'Claims', href: '/claims', icon: '📄' },
+      { name: 'Contact Us', href: '/contact', icon: '📞' },
     ],
   };
 

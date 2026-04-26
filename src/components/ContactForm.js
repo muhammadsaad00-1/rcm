@@ -21,7 +21,7 @@ export default function ContactForm({
   includeEHR = true,
   submitButtonText = 'Submit Free Audit Request →',
   onSubmit = null,
-  recipientEmail = 'Info@renoxmed.com'
+  recipientEmail = 'dumbo.taaha@gmail.com'
 }) {
   const [formData, setFormData] = useState({
     firstName: '',
@@ -59,32 +59,29 @@ export default function ContactForm({
       if (onSubmit) {
         await onSubmit(formData);
       } else {
-        // Submit through our server route so the access key stays private
-        const res = await fetch('/api/contact', {
-            method: 'POST',
-            headers: {
-                'Content-Type': 'application/json'
-            },
-          body: JSON.stringify(formData)
+        // Use the native FormData API as provided
+        const submitData = new FormData();
+        submitData.append("access_key", process.env.NEXT_PUBLIC_WEB3FORMS_ACCESS_KEY || "35fcbfbe-2f94-4bca-9201-d4c8d4709e43");
+        submitData.append("subject", `New Practice Audit Request - ${formData.practiceName}`);
+        submitData.append("from_name", `${formData.firstName} ${formData.lastName}`);
+        submitData.append("name", `${formData.firstName} ${formData.lastName}`);
+        submitData.append("email", formData.email);
+        submitData.append("phone", formData.phone);
+        submitData.append("practice_name", formData.practiceName);
+        submitData.append("specialty", formData.specialty || "N/A");
+        submitData.append("providers", formData.providers || "N/A");
+        submitData.append("ehr", formData.ehr || "N/A");
+        submitData.append("challenge", formData.challenge || "N/A");
+
+        const response = await fetch("https://api.web3forms.com/submit", {
+          method: "POST",
+          body: submitData
         });
 
-        if (!res.ok) {
-          const errorResponse = await res.json().catch(() => ({}));
-          throw new Error(errorResponse.error || 'Unable to submit your request right now.');
-        }
+        const data = await response.json();
 
-        const data = await res.json();
-        
-        if (data.success) {
-            console.log('Form submitted successfully!');
-            console.log('Usage:', data.usage);
-            console.log('Remaining submissions:', data.usage?.remaining);
-        } else {
-            console.error('Error:', data.error);
-            if (data.error === 'Usage limit exceeded') {
-                alert('You have reached your monthly submission limit. Please upgrade your plan.');
-            }
-            throw new Error(data.error || 'Submission failed securely via SnapItForms.');
+        if (!response.ok || !data.success) {
+          throw new Error(data.message || "Error submitting form");
         }
       }
 

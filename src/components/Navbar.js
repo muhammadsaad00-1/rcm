@@ -26,7 +26,7 @@ export default function Navbar() {
                     <div className="tb-item"><span>📍</span>&nbsp;Ohio, USA</div>
                 </div>
                 <div className="topbar-right">
-                    <a>HIPAA Compliant</a>
+                    <Link href="/">HIPAA Compliant</Link>
                     <Link href="/blog">Blog</Link>
                     <Link href="/reviews">Reviews</Link>
                     <Link href="/contact" className="top-cta">Free Audit →</Link>

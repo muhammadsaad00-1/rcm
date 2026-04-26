@@ -28,7 +28,7 @@ export default function ContactPage() {
                             title="Request Your Free Practice Audit"
                             subtitle="Fill out below — we'll respond within 2 business hours"
                             submitButtonText="Submit Free Audit Request →"
-                            recipientEmail="ms01.saad@gmail.com"
+                            recipientEmail="dumbo.taaha@gmail.com"
                         />
                     </div>
                 </div>

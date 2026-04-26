@@ -14,43 +14,45 @@ export async function POST(request) {
       );
     }
 
-    const accessKey = process.env.SNAPITFORMS_ACCESS_KEY;
-    if (!accessKey) {
-      return NextResponse.json(
-        { success: false, error: 'Server configuration error: missing SnapItForms key.' },
-        { status: 500 }
-      );
-    }
+    // Use the user's provided Web3Forms access key
+    const accessKey = "35fcbfbe-2f94-4bca-9201-d4c8d4709e43";
 
-    const submitUrl = process.env.SNAPITFORMS_SUBMIT_URL || 'https://api.snapitforms.com/submit';
-
-    const snapitPayload = {
+    const web3formsPayload = {
       access_key: accessKey,
-      name: `${payload.firstName} ${payload.lastName}`.trim(),
+      subject: `New Practice Audit Request - ${payload.practiceName}`,
+      from_name: `${payload.firstName} ${payload.lastName}`,
+      name: `${payload.firstName} ${payload.lastName}`,
       email: payload.email,
-      message: `Practice Name: ${payload.practiceName}\nPhone: ${payload.phone}\nSpecialty: ${payload.specialty || 'N/A'}\nProviders: ${payload.providers || 'N/A'}\nEHR: ${payload.ehr || 'N/A'}\nChallenge: ${payload.challenge || 'N/A'}`,
-      ...payload
+      phone: payload.phone,
+      practice_name: payload.practiceName,
+      specialty: payload.specialty || 'N/A',
+      providers: payload.providers || 'N/A',
+      ehr: payload.ehr || 'N/A',
+      challenge: payload.challenge || 'N/A'
     };
 
-    const snapitResponse = await fetch(submitUrl, {
+    const response = await fetch('https://api.web3forms.com/submit', {
       method: 'POST',
       headers: {
-        'Content-Type': 'application/json'
+        'Content-Type': 'application/json',
+        'Accept': 'application/json'
       },
-      body: JSON.stringify(snapitPayload)
+      body: JSON.stringify(web3formsPayload)
     });
 
-    const snapitData = await snapitResponse.json().catch(() => ({}));
+    const data = await response.json();
 
-    if (!snapitResponse.ok || !snapitData?.success) {
+    if (!response.ok || !data.success) {
       return NextResponse.json(
-        { success: false, error: snapitData?.error || 'Email submission failed.' },
+        { success: false, error: data.message || 'Email submission failed.' },
         { status: 502 }
       );
     }
 
-    return NextResponse.json({ success: true, usage: snapitData.usage || null });
-  } catch {
+    return NextResponse.json({ success: true, message: data.message });
+
+  } catch (err) {
+    console.error('Contact form error:', err);
     return NextResponse.json(
       { success: false, error: 'Unexpected error while sending request.' },
       { status: 500 }

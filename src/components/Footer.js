@@ -22,10 +22,10 @@ export function FullFooter() {
                         <div className="certif-badge"><span className="cb-ico">🏥</span>MGMA</div>
                     </div>
                     <div className="social-row">
-                        <div className="soc-btn" title="LinkedIn">in</div>
-                        <div className="soc-btn" title="Facebook">f</div>
-                        <div className="soc-btn" title="Twitter">𝕏</div>
-                        <div className="soc-btn" title="YouTube">▶</div>
+                        <Link href="https://linkedin.com" className="soc-btn" title="LinkedIn">in</Link>
+                        <Link href="https://facebook.com" className="soc-btn" title="Facebook">f</Link>
+                        <Link href="https://twitter.com" className="soc-btn" title="Twitter">𝕏</Link>
+                        <Link href="https://youtube.com" className="soc-btn" title="YouTube">▶</Link>
                     </div>
                 </div>
                 <div className="footer-col">
@@ -78,10 +78,10 @@ export function FullFooter() {
             <div className="footer-bottom">
                 <div className="footer-copy">© 2025 RenoxMed Medical Billing Inc. All rights reserved.</div>
                 <div className="footer-legal">
-                    <a>Privacy Policy</a>
-                    <a>Terms of Use</a>
-                    <a>HIPAA Notice</a>
-                    <a>Sitemap</a>
+                    <Link href="/">Privacy Policy</Link>
+                    <Link href="/">Terms of Use</Link>
+                    <Link href="/">HIPAA Notice</Link>
+                    <Link href="/">Sitemap</Link>
                 </div>
             </div>
         </footer>
@@ -95,8 +95,8 @@ export function MiniFooter() {
                 <div className="footer-copy">© 2025 RenoxMed Medical Billing Inc.</div>
                 <div className="footer-legal">
                     <Link href="/">Home</Link>
-                    <a>Privacy Policy</a>
-                    <a>HIPAA Notice</a>
+                    <Link href="/">Privacy Policy</Link>
+                    <Link href="/">HIPAA Notice</Link>
                 </div>
             </div>
         </footer>
