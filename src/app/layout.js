@@ -45,7 +45,7 @@ export const viewport = {
 export default function RootLayout({ children }) {
   return (
     <html lang="en" className={`${outfit.variable} ${sourceSerif.variable} ${plusJakarta.variable} ${newsreader.variable}`}>
-      <body>
+      <body suppressHydrationWarning>
         <ToastProvider>
           <LayoutWrapper>
             {children}

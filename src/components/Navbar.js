@@ -23,7 +23,7 @@ export default function Navbar() {
                 <div className="topbar-left">
                     <div className="tb-item"><span>📞</span>&nbsp;<a href="tel:8662007200" style={{ color: 'rgba(255,255,255,.6)' }}>(866) 200-7200</a></div>
                     <div className="tb-item"><span>✉</span>&nbsp;<a href="mailto:info@renoxmed.com" style={{ color: 'rgba(255,255,255,.6)' }}>info@renoxmed.com</a></div>
-                    <div className="tb-item"><span>📍</span>&nbsp;Ohio, USA</div>
+                    <div className="tb-item"><span>📍</span>&nbsp;Cincinnati, OH, USA</div>
                 </div>
                 <div className="topbar-right">
                     <Link href="/">HIPAA Compliant</Link>
@@ -36,11 +36,8 @@ export default function Navbar() {
             {/* Nav */}
             <nav className="site-nav">
                 <div className="nav-inner">
-                    <Link href="/" className="nav-logo" style={{ display: 'flex', flexDirection: 'column', alignItems: 'flex-start', gap: '0' }}>
-                        <div style={{ height: '52px', overflow: 'hidden', display: 'flex', alignItems: 'flex-start' }}>
-                            <img src="/logo-transparent.png" alt="RenoxMed" style={{ height: '70px', width: 'auto', maxWidth: 'none', display: 'block' }} />
-                        </div>
-                        <span className="logo-tagline" style={{ fontSize: '13px', color: 'var(--teal)', fontWeight: '600', marginTop: '-4px', marginLeft: '5px' }}>Transforming Healthcare Revenue</span>
+                    <Link href="/" className="nav-logo">
+                        <img src="/logo1.jpg" alt="RenoxMed" style={{ height: '78px', width: 'auto', display: 'block', objectFit: 'contain' }} />
                     </Link>
 
                     <ul className="nav-menu">

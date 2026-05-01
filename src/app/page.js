@@ -33,7 +33,7 @@ const specialties = [
   { emoji: '🩺', name: 'Family Practice', tag: 'Primary · Preventive Care', desc: 'Comprehensive billing for office visits, wellness exams, chronic care management, and preventive services. We ensure proper E/M leveling and capture every billable service.' },
   { emoji: '👶', name: 'Pediatrics', tag: 'Primary · Neonatology', desc: 'Pediatric-specific billing expertise covering well-child visits, immunization administration, developmental screenings, and complex neonatal ICU coding.' },
   { emoji: '🔬', name: 'Internal Medicine', tag: 'Chronic Disease Management', desc: 'Optimized billing for chronic condition management, transitional care, and complex medical decision-making. We capture CCM, TCM, and AWV codes often missed by generic billers.' },
-  { emoji: '🧠', name: 'Behavioral Specialty', tag: 'Psychiatry · Therapy Billing', desc: 'Expert billing for mental health services, including complex psychotherapy coding and telehealth reimbursement. We handle payer-specific requirements for behavioral health.' },
+  { emoji: '🧠', name: 'Behavioural Health', tag: 'Psychiatry · Therapy Billing', desc: 'Expert billing for mental health services, including complex psychotherapy coding and telehealth reimbursement. We handle payer-specific requirements for behavioral health.' },
   { emoji: '🏥', name: 'Urgent Care', tag: 'Multi-Site · Walk-In Billing', desc: 'High-volume, multi-site billing with rapid turnaround. We handle E/M coding, X-rays, lab work, procedures, and occupational medicine billing across all your locations.' },
 ];
 

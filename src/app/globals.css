@@ -31,7 +31,7 @@
   --r-md: 12px;
   --r-lg: 18px;
   --r-xl: 24px;
-  --nav-h: 88px;
+  --nav-h: 100px;
   --top-h: 38px;
 }
 
@@ -101,14 +101,14 @@ textarea {
    TOPBAR
 ═══════════════════════════════════════ */
 .topbar {
-  background: var(--navy);
+  background: #1a2f6e;
   height: var(--top-h);
   display: flex;
   align-items: center;
   justify-content: space-between;
   padding: 0 5%;
   font-size: 12.5px;
-  color: rgba(255, 255, 255, .55);
+  color: rgba(255, 255, 255, .65);
   position: relative;
   z-index: 200;
 }
@@ -174,10 +174,10 @@ textarea {
   position: sticky;
   top: 0;
   z-index: 500;
-  background: var(--white);
+  background: rgba(255, 255, 255, 0.97);
   height: var(--nav-h);
-  border-bottom: 1px solid var(--border);
-  box-shadow: var(--shadow-sm);
+  border-bottom: 1px solid rgba(26, 47, 110, 0.1);
+  box-shadow: 0 2px 16px rgba(26, 47, 110, 0.07);
 }
 
 .nav-inner {
@@ -3824,7 +3824,7 @@ textarea {
     display: flex;
     align-items: center;
     overflow: hidden;
-    background-color: var(--navy);
+    background: linear-gradient(145deg, #1e3a8a 0%, #1a3070 30%, #162b64 60%, #0f2050 100%);
     padding: 100px 0;
 }
 
@@ -3841,7 +3841,7 @@ textarea {
     right: -10%;
     width: 60vw;
     height: 60vw;
-    background: radial-gradient(circle, rgba(0, 201, 167, 0.15) 0%, rgba(0, 201, 167, 0) 70%);
+    background: radial-gradient(circle, rgba(0, 201, 167, 0.22) 0%, rgba(0, 201, 167, 0) 70%);
     border-radius: 50%;
     animation: pulseGlow 8s ease-in-out infinite alternate;
 }
@@ -3852,7 +3852,7 @@ textarea {
     left: -10%;
     width: 50vw;
     height: 50vw;
-    background: radial-gradient(circle, rgba(15, 28, 77, 0.8) 0%, rgba(11, 20, 55, 0) 70%);
+    background: radial-gradient(circle, rgba(30, 58, 138, 0.6) 0%, rgba(30, 58, 138, 0) 70%);
     border-radius: 50%;
 }
 
