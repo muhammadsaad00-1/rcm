@@ -54,7 +54,7 @@ export default function DashboardLayout({ children, user, role }) {
       {/* Mobile Header (Visible only on small screens) */}
       <div className="dashboard-mobile-header">
         <Link href="/" className="nav-logo">
-          <img src="/logo-transparent.png" alt="RenoxMed" style={{ height: '40px', width: 'auto' }} />
+          <img src="/logo1.jpg" alt="RenoxMed" style={{ height: '40px', width: 'auto' }} />
         </Link>
         <button className="mobile-menu-btn" onClick={() => setIsMobileOpen(!isMobileOpen)}>
           <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
@@ -72,7 +72,7 @@ export default function DashboardLayout({ children, user, role }) {
       <aside className={`sidebar-modern ${isMobileOpen ? 'mobile-open' : ''}`}>
         <div className="sidebar-brand">
           <Link href="/" style={{ textDecoration: 'none', color: 'white', display: 'block', marginBottom: '8px' }}>
-            <img src="/logo-transparent.png" alt="RenoxMed" style={{ height: '64px', width: 'auto', filter: 'brightness(0) invert(1)' }} />
+            <img src="/logo1.jpg" alt="RenoxMed" style={{ height: '64px', width: 'auto', filter: 'brightness(0) invert(1)' }} />
           </Link>
         </div>
 
