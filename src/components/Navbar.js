@@ -21,7 +21,7 @@ export default function Navbar() {
             {/* Topbar */}
             <div className="topbar">
                 <div className="topbar-left">
-                    <div className="tb-item"><span>📞</span>&nbsp;<a href="tel:8662007200" style={{ color: 'rgba(255,255,255,.6)' }}>(866) 200-7200</a></div>
+                    <div className="tb-item"><span>📞</span>&nbsp;<a href="tel:+15139662259" style={{ color: 'rgba(255,255,255,.6)' }}>(513) 966-2259</a></div>
                     <div className="tb-item"><span>✉</span>&nbsp;<a href="mailto:info@renoxmed.com" style={{ color: 'rgba(255,255,255,.6)' }}>info@renoxmed.com</a></div>
                     <div className="tb-item"><span>📍</span>&nbsp;Cincinnati, OH, USA</div>
                 </div>

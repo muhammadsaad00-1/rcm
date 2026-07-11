@@ -13,7 +13,7 @@ export default function ContactPage() {
                         <div className="contact-info">
                             <h2>Let&apos;s Talk About Your Practice</h2>
                             <p>Whether you&apos;re looking for a full billing takeover, specific RCM services, or just a second opinion on your current billing — we&apos;re here to help.</p>
-                            <div className="cinfo-card"><div className="cinfo-ico">📞</div><div><div className="cinfo-label">Phone</div><div className="cinfo-val">(866) 200-7200</div><div className="cinfo-note">Mon–Fri 8am–7pm EST · Sat 9am–3pm EST</div></div></div>
+                            <div className="cinfo-card"><div className="cinfo-ico">📞</div><div><div className="cinfo-label">Phone</div><div className="cinfo-val">(513) 966-2259</div><div className="cinfo-note">Mon–Fri 8am–7pm EST · Sat 9am–3pm EST</div></div></div>
                             <div className="cinfo-card"><div className="cinfo-ico">✉</div><div><div className="cinfo-label">Email</div><div className="cinfo-val">info@renoxmed.com</div><div className="cinfo-note">Response within 2 business hours</div></div></div>
                             <div className="cinfo-card"><div className="cinfo-ico">📍</div><div><div className="cinfo-label">Office</div><div className="cinfo-val">Ohio, USA 4502</div></div></div>
                             <div className="cinfo-card"><div className="cinfo-ico">💬</div><div><div className="cinfo-label">Live Chat</div><div className="cinfo-val">Available on this site</div><div className="cinfo-note">Average response: under 4 minutes</div></div></div>

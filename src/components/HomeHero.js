@@ -122,7 +122,7 @@ export default function HomeHero() {
                                 <polyline points="12 5 19 12 12 19" />
                             </svg>
                         </Link>
-                        <a href="tel:8662007200" className="btn-modern btn-modern-outline" style={{ background: 'var(--white)', padding: '14px 28px', fontSize: '16px' }}>
+                        <a href="tel:+15139662259" className="btn-modern btn-modern-outline" style={{ background: 'var(--white)', padding: '14px 28px', fontSize: '16px' }}>
                             <svg width="18" height="18" viewBox="0 0 24 24" fill="none"
                                 stroke="currentColor" strokeWidth="2"
                                 strokeLinecap="round" strokeLinejoin="round"
@@ -133,7 +133,7 @@ export default function HomeHero() {
                                     1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1
                                     2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z" />
                             </svg>
-                            (866) 200-7200
+                            (513) 966-2259
                         </a>
                     </div>
 

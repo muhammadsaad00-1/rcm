@@ -60,7 +60,7 @@ export function FullFooter() {
                 </div>
                 <div className="footer-col">
                     <h5>Contact</h5>
-                    <div className="footer-contact-item"><div className="fci-ico">📞</div><div><div className="fci-label">Phone</div><div className="fci-val">(866) 200-7200</div></div></div>
+                    <div className="footer-contact-item"><div className="fci-ico">📞</div><div><div className="fci-label">Phone</div><div className="fci-val">(513) 966-2259</div></div></div>
                     <div className="footer-contact-item"><div className="fci-ico">📧</div><div><div className="fci-label">Email</div><div className="fci-val">info@renoxmed.com</div></div></div>
                     <div className="footer-contact-item"><div className="fci-ico">📍</div><div><div className="fci-label">Office</div><div className="fci-val">Cincinnati, OH, USA</div></div></div>
                     <div className="footer-newsletter">

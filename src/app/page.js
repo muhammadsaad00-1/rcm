@@ -238,7 +238,7 @@ export default function HomePage() {
         <p>Get a free, no-obligation billing audit — we&apos;ll show you exactly what you&apos;re leaving on the table.</p>
         <div className="btn-group" style={{ display: 'flex', gap: 14, justifyContent: 'center', flexWrap: 'wrap' }}>
           <Link href="/contact" className="btn-modern btn-modern-secondary" style={{ background: 'white', color: 'var(--navy)' }}>Schedule Free Audit</Link>
-          <a href="tel:8662007200" className="btn-modern btn-modern-outline" style={{ color: 'white', borderColor: 'rgba(255,255,255,0.4)' }}>📞 Call (866) 200-7200</a>
+          <a href="tel:+15139662259" className="btn-modern btn-modern-outline" style={{ color: 'white', borderColor: 'rgba(255,255,255,0.4)' }}>📞 Call (513) 966-2259</a>
         </div>
       </div>
 
@@ -253,7 +253,7 @@ export default function HomePage() {
             </p>
             <div style={{ display: 'flex', justifyContent: 'center', gap: 12, flexWrap: 'wrap' }}>
               <Link href="/contact" className="btn-modern btn-modern-primary">Go to Contact Form</Link>
-              <a href="tel:8662007200" className="btn-modern btn-modern-outline">Call (866) 200-7200</a>
+              <a href="tel:+15139662259" className="btn-modern btn-modern-outline">Call (513) 966-2259</a>
             </div>
           </div>
         </div>
