@@ -4723,6 +4723,34 @@ textarea {
     width: 100%;
     justify-content: center;
   }
+
+  /* Hero badge — prevent single-line overflow on narrow phones */
+  .hm-badge {
+    white-space: normal;
+    text-align: center;
+    font-size: 11px;
+    letter-spacing: 0.01em;
+    padding: 5px 12px;
+    max-width: 100%;
+    word-break: break-word;
+  }
+
+  /* Hero desc — ensure it doesn't exceed container width */
+  .hm-desc {
+    font-size: 15px;
+    max-width: 100%;
+  }
+
+  /* Hero buttons — btn-modern variants should also go full-width */
+  .hm-actions .btn-modern {
+    width: 100%;
+    justify-content: center;
+  }
+
+  /* Visual card — reduce padding on very small screens */
+  .glass-panel-premium {
+    padding: 20px 16px;
+  }
 }
 
 /* ═══════════════════════════════════════
@@ -6106,5 +6134,91 @@ textarea {
 
   .rmh-btn {
     justify-content: center;
+  }
+}
+
+/* ═══════════════════════════════════════
+   HOMEPAGE MOBILE FIXES (≤ 640px)
+═══════════════════════════════════════ */
+@media (max-width: 640px) {
+
+  /* btn-modern variants — full width in flex column containers */
+  .hm-actions .btn-modern,
+  .why-work-grid .btn-modern,
+  .cta-banner .btn-modern {
+    width: 100%;
+    justify-content: center;
+  }
+
+  /* Why-work section — tighter vertical padding */
+  .why-work-section {
+    padding: 50px 5%;
+  }
+
+  .why-work-grid {
+    gap: 32px;
+  }
+
+  .why-work-checklist li {
+    font-size: 14px;
+  }
+
+  /* CTA banner — tighter vertical padding */
+  .cta-banner {
+    padding: 50px 5%;
+  }
+
+  .cta-banner h2 {
+    font-size: clamp(1.4rem, 5vw, 2rem);
+  }
+
+  .cta-banner p {
+    font-size: 14px;
+    margin-bottom: 24px;
+  }
+
+  /* Provider section */
+  .provider-section {
+    padding: 50px 5%;
+  }
+
+  /* Stats row inside why-grid overrides the inline 1fr 1fr */
+  .why-grid .stats-row {
+    grid-template-columns: 1fr 1fr !important;
+  }
+
+  .stat-num {
+    font-size: 2rem;
+  }
+
+  /* Specialties section — reduce vertical space */
+  .spec-grid {
+    grid-template-columns: 1fr 1fr;
+    gap: 10px;
+  }
+
+  /* Section heading spacing */
+  .sec-title {
+    margin-bottom: 10px;
+  }
+
+  /* Trust metrics row in hero — compact */
+  .hm-trust-val {
+    font-size: 18px;
+  }
+
+  .hm-trust-lbl {
+    font-size: 10px;
+  }
+
+  /* Notification card in hero — clamp width so it doesn't overflow */
+  .hm-notification {
+    max-width: calc(100% - 32px);
+    right: 16px;
+  }
+
+  /* Why-work right card — remove extra padding */
+  .why-work-right {
+    padding: 28px 20px !important;
   }
 }

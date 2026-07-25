@@ -147,7 +147,7 @@ export default function HomePage() {
       </section>
 
       {/* ═══ 6. SPECIALTIES ═══ */}
-      <section style={{ background: 'var(--navy)', padding: '90px 5%' }}>
+      <section className="section spec-section" style={{ background: 'var(--navy)' }}>
         <div className="container">
           <div className="center" style={{ marginBottom: 44 }}>
             <div className="sec-label" style={{ justifyContent: 'center', display: 'flex', color: 'var(--teal)' }}>Specialties</div>
