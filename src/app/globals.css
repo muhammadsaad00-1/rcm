@@ -6191,10 +6191,30 @@ textarea {
     font-size: 2rem;
   }
 
-  /* Specialties section — reduce vertical space */
+  /* Specialties: constrain grid items so long names don't overflow viewport */
   .spec-grid {
     grid-template-columns: 1fr 1fr;
-    gap: 10px;
+    gap: 8px;
+  }
+
+  .spec-card {
+    min-width: 0;
+    padding: 12px 10px;
+    gap: 8px;
+  }
+
+  .spec-ico {
+    font-size: 22px;
+  }
+
+  .spec-name {
+    font-size: 12px;
+    word-break: break-word;
+  }
+
+  .spec-tag {
+    font-size: 11px;
+    word-break: break-word;
   }
 
   /* Section heading spacing */
