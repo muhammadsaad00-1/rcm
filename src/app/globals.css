@@ -6244,4 +6244,10 @@ textarea {
   .page-hero {
     padding: 48px 5% 56px;
   }
+
+  /* Homepage contact form section — stack on mobile */
+  .contact-split-grid {
+    grid-template-columns: 1fr !important;
+    gap: 32px !important;
+  }
 }

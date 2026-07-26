@@ -16,7 +16,7 @@ import { useState } from 'react';
  */
 export default function ContactForm({
   title = 'Request Your Free Practice Audit',
-  subtitle = 'Fill out below — we\'ll respond within 2 business hours',
+  subtitle = 'Fill out below — we\'ll be in touch shortly.',
   includeSpecialty = true,
   includeEHR = true,
   submitButtonText = 'Submit Free Audit Request →',
@@ -120,7 +120,7 @@ export default function ContactForm({
           <div style={{ fontSize: '32px', marginBottom: '12px' }}>✓</div>
           <h3 style={{ color: '#28C840', marginBottom: '8px' }}>Request Submitted!</h3>
           <p style={{ color: 'var(--slate)' }}>
-            A billing specialist will contact you within 2 business hours.
+            A billing specialist will be in touch with you shortly.
           </p>
         </div>
       </div>

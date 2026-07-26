@@ -242,19 +242,40 @@ export default function HomePage() {
         </div>
       </div>
 
-      {/* ═══ 10. QUICK CONTACT CTA ═══ */}
-      <section className="section">
+      {/* ═══ 10. CONTACT FORM ═══ */}
+      <section className="section" style={{ background: 'var(--gray1)' }}>
         <div className="container">
-          <div className="center" style={{ maxWidth: 760, margin: '0 auto' }}>
-            <div className="sec-label" style={{ justifyContent: 'center', display: 'flex' }}>Quick Contact</div>
-            <h2 className="sec-title">Prefer a Dedicated Contact Page?</h2>
-            <p className="sec-sub" style={{ margin: '0 auto 24px' }}>
-              Use our full contact page for detailed requests and we will respond promptly.
-            </p>
-            <div style={{ display: 'flex', justifyContent: 'center', gap: 12, flexWrap: 'wrap' }}>
-              <Link href="/contact" className="btn-modern btn-modern-primary">Go to Contact Form</Link>
-              <a href="tel:+15139662259" className="btn-modern btn-modern-outline">Call (513) 966-2259</a>
+          <div className="contact-split-grid" style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: 64, alignItems: 'start', maxWidth: 1100, margin: '0 auto' }}>
+            <div>
+              <div className="sec-label">Get In Touch</div>
+              <h2 className="sec-title" style={{ marginBottom: 16 }}>Request Your Free Practice Audit</h2>
+              <p style={{ color: 'var(--slate)', lineHeight: 1.7, marginBottom: 32 }}>
+                Our billing specialists will review your current revenue cycle and identify opportunities to increase collections — at no cost or obligation.
+              </p>
+              <ul style={{ listStyle: 'none', padding: 0, display: 'flex', flexDirection: 'column', gap: 14 }}>
+                {[
+                  'Detailed analysis of your billing process',
+                  'Identify missed revenue opportunities',
+                  'No commitment required',
+                  'HIPAA-compliant and confidential',
+                ].map(item => (
+                  <li key={item} style={{ display: 'flex', alignItems: 'center', gap: 10, color: 'var(--slate)', fontSize: 15 }}>
+                    <span style={{ width: 22, height: 22, borderRadius: '50%', background: 'var(--teal-soft)', display: 'inline-flex', alignItems: 'center', justifyContent: 'center', flexShrink: 0 }}>
+                      <CheckSVG />
+                    </span>
+                    {item}
+                  </li>
+                ))}
+              </ul>
+              <div style={{ marginTop: 32, display: 'flex', gap: 12, alignItems: 'center', flexWrap: 'wrap' }}>
+                <a href="tel:+15139662259" className="btn-modern btn-modern-outline" style={{ fontSize: 14 }}>📞 (513) 966-2259</a>
+                <a href="mailto:info@renoxmed.com" style={{ color: 'var(--slate)', fontSize: 14 }}>info@renoxmed.com</a>
+              </div>
             </div>
+            <ContactForm
+              title="Start Your Free Audit"
+              subtitle="Fill out below and we'll be in touch shortly."
+            />
           </div>
         </div>
       </section>

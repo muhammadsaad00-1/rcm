@@ -37,7 +37,7 @@ export default function Navbar() {
             <nav className="site-nav">
                 <div className="nav-inner">
                     <Link href="/" className="nav-logo">
-                        <img src="/logo1.jpg" alt="RenoxMed" style={{ height: '86px', width: 'auto', display: 'block', objectFit: 'contain', mixBlendMode: 'multiply' }} />
+                        <img src="/logo1.jpg" alt="RenoxMed" style={{ height: '86px', width: 'auto', display: 'block', objectFit: 'contain' }} />
                     </Link>
 
                     <ul className="nav-menu">

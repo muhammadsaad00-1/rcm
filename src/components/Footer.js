@@ -9,7 +9,7 @@ export function FullFooter() {
             <div className="footer-top">
                 <div className="footer-brand">
                     <Link href="/" className="nav-logo" style={{ marginBottom: '24px', display: 'inline-block' }}>
-                        <img src="/logo1.jpg" alt="RenoxMed" style={{ height: '86px', width: 'auto', display: 'block', objectFit: 'contain', mixBlendMode: 'multiply' }} />
+                        <img src="/logo1.jpg" alt="RenoxMed" style={{ height: '86px', width: 'auto', display: 'block', objectFit: 'contain', background: 'white', borderRadius: 8, padding: '4px 10px' }} />
                     </Link>
                     <p>US-based revenue cycle management for healthcare providers of all sizes. HIPAA-compliant since 2018. Starting at a fixed percentage of monthly collections.</p>
                     <div className="footer-certif">
