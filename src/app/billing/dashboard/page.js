@@ -6,20 +6,24 @@ import Link from 'next/link';
 export default async function BillingDashboardPage() {
   const supabase = await createClient();
 
-  const { data: { user } } = await supabase.auth.getUser();
+  const { data: { user }, error: authError } = await supabase.auth.getUser();
 
-  if (!user) {
+  if (authError || !user) {
     redirect('/auth/login');
   }
 
-  const { data: userData } = await supabase
+  const { data: userData, error: userError } = await supabase
     .from('users')
     .select('*')
     .eq('id', user.id)
     .single();
 
-  if (userData?.role !== 'billing' && userData?.role !== 'admin') {
-    redirect('/dashboard');
+  if (userError || !userData) {
+    redirect('/auth/login?error=profile_missing');
+  }
+
+  if (userData.role !== 'billing' && userData.role !== 'admin') {
+    redirect('/auth/login?error=unauthorized');
   }
 
   // Fetch claims submitted by this user

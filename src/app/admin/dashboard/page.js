@@ -6,64 +6,53 @@ import Link from 'next/link';
 export default async function AdminDashboardPage() {
   const supabase = await createClient();
 
-  const { data: { user } } = await supabase.auth.getUser();
+  const { data: { user }, error: authError } = await supabase.auth.getUser();
 
-  if (!user) {
+  if (authError || !user) {
     redirect('/auth/login');
   }
 
-  const { data: userData } = await supabase
+  const { data: userData, error: userError } = await supabase
     .from('users')
     .select('*')
     .eq('id', user.id)
     .single();
 
-  if (userData?.role !== 'admin') {
-    redirect('/dashboard');
+  if (userError || !userData) {
+    redirect('/auth/login?error=profile_missing');
   }
 
-  // Fetch dashboard stats
-  const { data: allUsers } = await supabase
-    .from('users')
-    .select('*')
-    .order('created_at', { ascending: false });
+  if (userData.role !== 'admin') {
+    redirect('/auth/login?error=not_admin');
+  }
 
-  const { data: totalPatients } = await supabase
-    .from('patients')
-    .select('id', { count: 'exact' });
+  // Fetch dashboard stats — all errors swallowed so the page never hard-crashes
+  const [
+    { data: allUsers },
+    { data: totalPatients },
+    { data: totalClaims },
+    { data: totalPayments },
+    { data: recentClaims },
+    { data: claimsByStatus },
+  ] = await Promise.all([
+    supabase.from('users').select('*').order('created_at', { ascending: false }),
+    supabase.from('patients').select('id'),
+    supabase.from('claims').select('id'),
+    supabase.from('payments').select('amount_paid'),
+    supabase.from('claims').select('id, claim_number, status, total_charge, created_at').order('created_at', { ascending: false }).limit(5),
+    supabase.from('claims').select('status, total_charge'),
+  ]);
 
-  const { data: totalClaims } = await supabase
-    .from('claims')
-    .select('id', { count: 'exact' });
-
-  const { data: totalPayments } = await supabase
-    .from('payments')
-    .select('amount_paid');
-
-  const { data: recentClaims } = await supabase
-    .from('claims')
-    .select('id, claim_number, status, total_charge, created_at')
-    .order('created_at', { ascending: false })
-    .limit(5);
-
-  // Get claims by status
-  const { data: claimsByStatus } = await supabase
-    .from('claims')
-    .select('status, total_charge');
-
-  const statusSummary = claimsByStatus?.reduce((acc, claim) => {
-    if (!acc[claim.status]) {
-      acc[claim.status] = { count: 0, amount: 0 };
-    }
+  const statusSummary = (claimsByStatus ?? []).reduce((acc, claim) => {
+    if (!acc[claim.status]) acc[claim.status] = { count: 0, amount: 0 };
     acc[claim.status].count++;
-    acc[claim.status].amount += parseFloat(claim.total_charge);
+    acc[claim.status].amount += parseFloat(claim.total_charge || 0);
     return acc;
   }, {});
 
-  const totalRevenue = totalPayments?.reduce((sum, p) => sum + parseFloat(p.amount_paid || 0), 0) || 0;
+  const totalRevenue = (totalPayments ?? []).reduce((sum, p) => sum + parseFloat(p.amount_paid || 0), 0);
 
-  // Group users by role
-  const usersByRole = allUsers?.reduce((acc, u) => {
+  const usersByRole = (allUsers ?? []).reduce((acc, u) => {
     acc[u.role] = (acc[u.role] || 0) + 1;
     return acc;
   }, {});
