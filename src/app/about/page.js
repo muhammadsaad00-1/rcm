@@ -8,14 +8,14 @@ export default function AboutPage() {
     return (
         <>
             <Breadcrumb items={[{ label: 'Home', href: '/' }, { label: 'About Us' }]} />
-            <PageHero tag="🏢 Our Story" title="About" titleAccent="RenoxMed" description="Founded in 2018 by healthcare administrators who watched thousands slip through billing inefficiencies — and decided to fix it." />
+            <PageHero tag="🏢 Our Story" title="About" titleAccent="RenoxMed" description="Founded by healthcare administrators who watched revenue slip through billing inefficiencies — and decided to fix it." />
             <section className="section"><div className="container">
                 <div className="about-story">
                     <div>
                         <div className="sec-label">Our Story</div>
                         <h2 className="sec-title">Built by Billers, for Clinicians</h2>
                         <p style={{ color: 'var(--text3)', lineHeight: 1.8, marginBottom: 16 }}>RenoxMed was founded after our CEO spent over a decade as a practice administrator watching healthcare providers lose significant revenue annually to billing errors, coding inefficiencies, and uncollected claims.</p>
-                        <p style={{ color: 'var(--text3)', lineHeight: 1.8, marginBottom: 16 }}>In 2018, he assembled a team of CPC-certified coders, healthcare attorneys, and revenue cycle technology experts to build a smarter billing company — one that combined human expertise with technology to achieve results that in-house billing never could.</p>
+                        <p style={{ color: 'var(--text3)', lineHeight: 1.8, marginBottom: 16 }}>He assembled a team of CPC-certified coders, healthcare attorneys, and revenue cycle technology experts to build a smarter billing company — one that combined human expertise with technology to achieve results that in-house billing never could.</p>
                         <p style={{ color: 'var(--text3)', lineHeight: 1.8, marginBottom: 28 }}>Today, RenoxMed serves multiple providers across many specialties, processing thousands in annual claims from our US-based headquarters in Ohio, USA.</p>
                         <div style={{ display: 'flex', gap: 12, flexWrap: 'wrap' }}><Link href="/contact" className="btn-primary">Work With Us</Link><Link href="/services" className="btn-outline">Our Services</Link></div>
                     </div>
@@ -23,7 +23,7 @@ export default function AboutPage() {
                         <div style={{ position: 'absolute', top: -40, right: -40, width: 200, height: 200, background: 'radial-gradient(circle,rgba(0,201,167,.2),transparent 70%)' }}></div>
                         <div className="about-img-inner">
                             <div className="abt-stat"><span className="abt-val">Thousands+</span><span className="abt-lbl">Annual Claims Processed</span></div>
-                            <div className="abt-stat"><span className="abt-val">2018</span><span className="abt-lbl">Year Founded</span></div>
+                            <div className="abt-stat"><span className="abt-val">US-Based</span><span className="abt-lbl">Headquarters</span></div>
                             <div className="abt-stat"><span className="abt-val">Multiple</span><span className="abt-lbl">Provider Clients</span></div>
                             <div className="abt-stat"><span className="abt-val">Expert</span><span className="abt-lbl">US-Based Staff</span></div>
                             <div className="abt-stat"><span className="abt-val">High</span><span className="abt-lbl">Clean Claim Rate</span></div>
@@ -32,7 +32,7 @@ export default function AboutPage() {
                 </div>
                 <div style={{ marginTop: 80 }}><div className="sec-label" style={{ justifyContent: 'center', display: 'flex' }}>Our Values</div><h2 className="sec-title center">What We Stand For</h2></div>
                 <div className="values-grid">
-                    <div className="val-card"><div className="val-ico">🎯</div><h4>Accuracy First</h4><p>We hold ourselves to a 98%+ clean claim standard. Every claim reviewed before submission.</p></div>
+                    <div className="val-card"><div className="val-ico">🎯</div><h4>Accuracy First</h4><p>We hold ourselves to an industry-leading clean claim standard. Every claim reviewed before submission.</p></div>
                     <div className="val-card"><div className="val-ico">🤝</div><h4>True Partnership</h4><p>We are an extension of your team — not a vendor. Your KPIs are our performance benchmarks.</p></div>
                     <div className="val-card"><div className="val-ico">🔍</div><h4>Full Transparency</h4><p>Real-time access to every claim, denial, and payment. No black-box billing, ever.</p></div>
                     <div className="val-card"><div className="val-ico">🔒</div><h4>Uncompromising Compliance</h4><p>HIPAA, SOC 2, FIPS — audited annually by independent third parties.</p></div>

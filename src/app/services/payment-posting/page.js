@@ -38,7 +38,7 @@ export default function PaymentPostingPage() {
                             <div className="sec-label">Key Metrics</div>
                             <h2 className="sec-title">What Accurate Payment Posting Delivers</h2>
                             <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: 16, marginTop: 12 }}>
-                                {[{ v: '99.8%', l: 'Posting Accuracy' }, { v: '24 hrs', l: 'Posting Turnaround' }, { v: '$0', l: 'Missed Underpayments' }, { v: '100%', l: 'ERA Auto-Match Rate' }].map(m => (
+                                {[{ v: 'Industry-Leading', l: 'Posting Accuracy' }, { v: 'Fast', l: 'Posting Turnaround' }, { v: 'None', l: 'Missed Underpayments' }, { v: 'Consistent', l: 'ERA Auto-Match Rate' }].map(m => (
                                     <div key={m.l} style={{ background: 'var(--teal-soft)', border: '1px solid var(--teal-mid)', borderRadius: 'var(--r-md)', padding: 20, textAlign: 'center' }}>
                                         <div style={{ fontSize: '2rem', fontWeight: 800, color: 'var(--navy)', lineHeight: 1 }}>{m.v}</div>
                                         <div style={{ fontSize: 12, color: 'var(--text3)', marginTop: 5, textTransform: 'uppercase', letterSpacing: '.05em' }}>{m.l}</div>
@@ -47,7 +47,7 @@ export default function PaymentPostingPage() {
                             </div>
                             <div className="info-box" style={{ marginTop: 24 }}>
                                 <div className="info-box-title">💡 Why It Matters</div>
-                                <p>Incorrect payment posting is the hidden leak in revenue cycle management. On average, practices with manual posting lose 3-5% of reimbursements to posting errors they never catch.</p>
+                                <p>Incorrect payment posting is the hidden leak in revenue cycle management. On average, practices with manual posting suffer significant revenue losses from posting errors they never catch.</p>
                             </div>
                         </div>
                     </div>
@@ -56,7 +56,7 @@ export default function PaymentPostingPage() {
             <section className="section" style={{ background: 'var(--off)' }}>
                 <div className="container">
                     <div className="grid-2 grid-align" style={{ gap: 60 }}>
-                        <div><div className="sec-label">Get Started</div><h2 className="sec-title">Eliminate Posting Errors Today</h2><p className="sec-sub">Let our team handle your payment posting with 99.8% accuracy so you can focus on patient care.</p><div style={{ marginTop: 24, display: 'flex', gap: 12, flexWrap: 'wrap' }}><Link href="/contact" className="btn-primary">Start Today</Link><Link href="/services" className="btn-outline">All Services</Link></div></div>
+                        <div><div className="sec-label">Get Started</div><h2 className="sec-title">Eliminate Posting Errors Today</h2><p className="sec-sub">Let our team handle your payment posting with industry-leading accuracy so you can focus on patient care.</p><div style={{ marginTop: 24, display: 'flex', gap: 12, flexWrap: 'wrap' }}><Link href="/contact" className="btn-primary">Start Today</Link><Link href="/services" className="btn-outline">All Services</Link></div></div>
                         <div className="cform-wrap">
                             <div className="cform-title">Get a Free Consultation</div>
                             <div className="cform-sub">Speak with a payment posting specialist</div>

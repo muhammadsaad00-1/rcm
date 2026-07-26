@@ -97,7 +97,7 @@ export default function HomeHero() {
                 <div className={`hm-content ${mounted ? 'animate-in' : ''}`}>
                     <div className="hm-badge">
                         <span className="hm-badge-dot" />
-                        HIPAA Compliant · US-Based · Trusted by 1,200+ Providers
+                        HIPAA Compliant · US-Based · Trusted by Providers Nationwide
                     </div>
 
                     <h1 className="hm-title">
@@ -106,9 +106,9 @@ export default function HomeHero() {
                     </h1>
 
                     <p className="hm-desc">
-                        Stop losing 15–25% of your earned revenue to billing inefficiencies.
-                        RenoxMed delivers end-to-end revenue cycle management with a 98.3%
-                        clean claim rate — starting at just 2.95% of collections.
+                        Stop losing earned revenue to billing inefficiencies.
+                        RenoxMed delivers end-to-end revenue cycle management with an
+                        industry-leading clean claim rate — at a competitive percentage of collections.
                     </p>
 
                     <div className="hm-actions" style={{ display: 'flex', gap: '16px' }}>
@@ -139,13 +139,13 @@ export default function HomeHero() {
 
                     <div className="hm-trust-metrics">
                         <div className="hm-trust-item">
-                            <div className="hm-trust-val">98.3%</div>
+                            <div className="hm-trust-val">Industry-Leading</div>
                             <div className="hm-trust-lbl">Clean Claim Rate</div>
                         </div>
                         <div className="hm-trust-divider" />
                         <div className="hm-trust-item">
-                            <div className="hm-trust-val">18 Days</div>
-                            <div className="hm-trust-lbl">Avg. AR Turnaround</div>
+                            <div className="hm-trust-val">Fast</div>
+                            <div className="hm-trust-lbl">AR Turnaround</div>
                         </div>
                         <div className="hm-trust-divider" />
                         <div className="hm-trust-item">
@@ -214,8 +214,8 @@ export default function HomeHero() {
                                 </svg>
                             </div>
                             <div className="hm-notif-content">
-                                <strong>Claim #CF-9847 Approved</strong>
-                                <span>Aetna · $1,240 · Just now</span>
+                                <strong>Claim Approved</strong>
+                                <span>Aetna · Just now</span>
                             </div>
                         </div>
                     </div>

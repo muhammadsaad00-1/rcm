@@ -27,7 +27,7 @@ export default function CodingPage() {
                             </ul>
                             <div className="info-box" style={{ marginTop: 28 }}>
                                 <div className="info-box-title">📊 Impact</div>
-                                <p>Practices using our coding service see an average 12% increase in per-encounter reimbursement within 90 days — simply by capturing codes that were previously missed.</p>
+                                <p>Practices using our coding service see a measurable increase in per-encounter reimbursement quickly — simply by capturing codes that were previously missed.</p>
                             </div>
                         </div>
                         <div>
@@ -58,12 +58,12 @@ export default function CodingPage() {
                         <div>
                             <div className="sec-label">Get Started</div>
                             <h2 className="sec-title">Ready to Improve Your Coding Accuracy?</h2>
-                            <p className="sec-sub">Incorrect coding costs the average practice $125,000+ per year in underpayments and denials. Let us show you what you&apos;re leaving on the table.</p>
+                            <p className="sec-sub">Incorrect coding costs the average practice significant revenue per year in underpayments and denials. Let us show you what you&apos;re leaving on the table.</p>
                             <div style={{ marginTop: 24, display: 'flex', gap: 12, flexWrap: 'wrap' }}><Link href="/contact" className="btn-primary">Start Today</Link><Link href="/services" className="btn-outline">All Services</Link></div>
                         </div>
                         <div className="cform-wrap">
                             <div className="cform-title">Get a Free Consultation</div>
-                            <div className="cform-sub">Speak with a coding specialist within 2 hours</div>
+                            <div className="cform-sub">Speak with a coding specialist promptly</div>
                             <div className="form-row"><div className="form-group"><label>Name *</label><input type="text" placeholder="Dr. Name" /></div><div className="form-group"><label>Practice Name *</label><input type="text" placeholder="Practice Name" /></div></div>
                             <div className="form-group"><label>Email *</label><input type="email" placeholder="email@practice.com" /></div>
                             <div className="form-group"><label>Phone *</label><input type="tel" placeholder="(555) 000-0000" /></div>

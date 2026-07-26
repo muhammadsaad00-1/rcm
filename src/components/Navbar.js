@@ -37,7 +37,7 @@ export default function Navbar() {
             <nav className="site-nav">
                 <div className="nav-inner">
                     <Link href="/" className="nav-logo">
-                        <img src="/logo1.jpg" alt="RenoxMed" style={{ height: '78px', width: 'auto', display: 'block', objectFit: 'contain' }} />
+                        <img src="/logo1.jpg" alt="RenoxMed" style={{ height: '86px', width: 'auto', display: 'block', objectFit: 'contain', mixBlendMode: 'multiply' }} />
                     </Link>
 
                     <ul className="nav-menu">
@@ -50,7 +50,7 @@ export default function Navbar() {
                                 <div className="dropdown-inner dd-cols-3">
                                     <div className="dd-header"><h4>RCM Services — Individual Pages</h4></div>
                                     <Link href="/services/audit" className="dd-item"><div className="dd-icon">🔎</div><div><div className="dd-item-title">Medical Billing Audit</div><div className="dd-item-sub">Detailed analysis of your practice billing</div></div></Link>
-                                    <Link href="/services/billing" className="dd-item"><div className="dd-icon">🏷️</div><div><div className="dd-item-title">Medical Billing</div><div className="dd-item-sub">Clean claim submissions within 48hrs</div></div></Link>
+                                    <Link href="/services/billing" className="dd-item"><div className="dd-icon">🏷️</div><div><div className="dd-item-title">Medical Billing</div><div className="dd-item-sub">Clean claim submissions, fast turnaround</div></div></Link>
                                     <Link href="/services/eligibility" className="dd-item"><div className="dd-icon">✅</div><div><div className="dd-item-title">Eligibility Verification</div><div className="dd-item-sub">Real-time insurance benefit checks</div></div></Link>
                                     <Link href="/services/denial" className="dd-item"><div className="dd-icon">🚫</div><div><div className="dd-item-title">Denial Management</div><div className="dd-item-sub">Prevent and resolve claim denials fast</div></div></Link>
                                     <Link href="/services/ar" className="dd-item"><div className="dd-icon">💰</div><div><div className="dd-item-title">Account Receivable</div><div className="dd-item-sub">Maximize collections, minimize AR days</div></div></Link>

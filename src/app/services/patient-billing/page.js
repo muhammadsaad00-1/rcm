@@ -15,7 +15,7 @@ export default function PatientBillingPage() {
                         <div>
                             <div className="sec-label">Our Approach</div>
                             <h2 className="sec-title">Collect More While Keeping Patients Happy</h2>
-                            <p style={{ color: 'var(--text3)', lineHeight: 1.75, marginBottom: 22 }}>Patient responsibility now accounts for 30%+ of practice revenue. Our patient billing service ensures clear, professional statements are delivered promptly, payment plans are offered proactively, and collection follow-ups are handled with compassion and compliance.</p>
+                            <p style={{ color: 'var(--text3)', lineHeight: 1.75, marginBottom: 22 }}>Patient responsibility now accounts for a growing share of practice revenue. Our patient billing service ensures clear, professional statements are delivered promptly, payment plans are offered proactively, and collection follow-ups are handled with compassion and compliance.</p>
                             <ul className="check-list">
                                 <li>Branded patient statement generation and delivery</li>
                                 <li>Electronic and paper statement options</li>
@@ -51,7 +51,7 @@ export default function PatientBillingPage() {
             <section className="section" style={{ background: 'var(--off)' }}>
                 <div className="container">
                     <div className="grid-2 grid-align" style={{ gap: 60 }}>
-                        <div><div className="sec-label">Get Started</div><h2 className="sec-title">Maximize Your Patient Collections</h2><p className="sec-sub">Stop losing revenue to patient non-payment. Our team collects an average of 94% of patient balances within 60 days.</p><div style={{ marginTop: 24, display: 'flex', gap: 12, flexWrap: 'wrap' }}><Link href="/contact" className="btn-primary">Start Today</Link><Link href="/services" className="btn-outline">All Services</Link></div></div>
+                        <div><div className="sec-label">Get Started</div><h2 className="sec-title">Maximize Your Patient Collections</h2><p className="sec-sub">Stop losing revenue to patient non-payment. Our team collects the vast majority of patient balances quickly.</p><div style={{ marginTop: 24, display: 'flex', gap: 12, flexWrap: 'wrap' }}><Link href="/contact" className="btn-primary">Start Today</Link><Link href="/services" className="btn-outline">All Services</Link></div></div>
                         <div className="cform-wrap">
                             <div className="cform-title">Get a Free Consultation</div>
                             <div className="cform-sub">Speak with a patient billing specialist</div>

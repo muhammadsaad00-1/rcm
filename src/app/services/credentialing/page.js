@@ -16,7 +16,7 @@ export default function CredentialingPage() {
                     <div><Image src="/images/coding-team.png" alt="Provider credentialing" width={500} height={400} style={{ width: '100%', height: 'auto', borderRadius: 'var(--r-xl)' }} /></div>
                 </div>
             </div></section>
-            <section className="section" style={{ background: 'var(--off)' }}><div className="container"><div className="grid-2 grid-align" style={{ gap: 60 }}><div><div className="sec-label">Get Credentialed Fast</div><h2 className="sec-title">Average Credentialing Turnaround: 45–60 Days</h2><p className="sec-sub">New provider? Expanding your practice? We handle all credentialing paperwork so you can start billing immediately after approval.</p></div>
+            <section className="section" style={{ background: 'var(--off)' }}><div className="container"><div className="grid-2 grid-align" style={{ gap: 60 }}><div><div className="sec-label">Get Credentialed Fast</div><h2 className="sec-title">Efficient Credentialing Turnaround</h2><p className="sec-sub">New provider? Expanding your practice? We handle all credentialing paperwork so you can start billing immediately after approval.</p></div>
                 <div className="cform-wrap"><div className="cform-title">Credentialing Inquiry</div><div className="cform-sub">Tell us about your credentialing needs</div>
                     <div className="form-row"><div className="form-group"><label>Provider Name *</label><input type="text" /></div><div className="form-group"><label>Practice Name *</label><input type="text" /></div></div>
                     <div className="form-group"><label>Email *</label><input type="email" /></div>

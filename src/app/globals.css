@@ -871,12 +871,12 @@ textarea {
 }
 
 .stat-num {
-  font-size: 2.8rem;
+  font-size: clamp(1.4rem, 3vw, 2.8rem);
   font-weight: 800;
   color: var(--navy);
   line-height: 1;
   margin-bottom: 6px;
-  letter-spacing: -.04em;
+  letter-spacing: -.02em;
 }
 
 .stat-num em {
@@ -4054,7 +4054,7 @@ textarea {
 }
 
 .hm-trust-val {
-  font-size: 24px;
+  font-size: clamp(13px, 2.5vw, 22px);
   font-weight: 800;
   color: var(--white);
   line-height: 1;
@@ -6220,5 +6220,28 @@ textarea {
   /* Why-work right card — remove extra padding */
   .why-work-right {
     padding: 28px 20px !important;
+  }
+
+  /* About page — reduce image box padding so stat grid fits */
+  .about-img {
+    padding: 24px;
+  }
+
+  .about-img-inner {
+    grid-template-columns: 1fr 1fr;
+    gap: 10px;
+  }
+
+  .abt-val {
+    font-size: 1.2rem;
+  }
+
+  .abt-stat {
+    padding: 14px 10px;
+  }
+
+  /* Page hero — tighten vertical padding */
+  .page-hero {
+    padding: 48px 5% 56px;
   }
 }

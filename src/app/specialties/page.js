@@ -34,12 +34,12 @@ export default function SpecialtiesPage() {
             <PageHero tag="🏥 Medical Specialties" title="Billing Expertise Across" titleAccent="40+ Specialties" description="Generic billing is the #1 cause of preventable denials. Our certified billers speak the coding language of your specific specialty — from complex surgical subspecialties to behavioral health." />
             <section className="section">
                 <div className="container">
-                    <div style={{ display: 'grid', gridTemplateColumns: 'repeat(4,1fr)', gap: 16 }}>
+                    <div className="spec-grid">
                         {specialties.map(s => (
                             <div key={s.n} className="spec-card"><span className="spec-ico">{s.i}</span><div><div className="spec-name">{s.n}</div><div className="spec-tag">{s.s}</div></div></div>
                         ))}
                     </div>
-                    <CtaBanner title="Don't See Your Specialty?" description="We serve 40+ specialties. Contact us to confirm we have expertise in your area." primaryText="Ask a Specialist" primaryHref="/contact" />
+                    <CtaBanner title="Don't See Your Specialty?" description="We serve many specialties. Contact us to confirm we have expertise in your area." primaryText="Ask a Specialist" primaryHref="/contact" />
                 </div>
             </section>
             <MiniFooter />

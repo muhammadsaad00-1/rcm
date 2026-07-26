@@ -9,27 +9,27 @@ export default function WhyChooseUs() {
   const features = [
     {
       icon: '⚡',
-      title: 'Lightning-Fast Claims',
-      description: 'Submit to 2,500+ payers within 48 hours. Real-time tracking, zero delays.',
-      highlight: '99.2% clean claim rate'
+      title: 'Fast Claim Submissions',
+      description: 'Submit to thousands of payers quickly. Real-time tracking, zero delays.',
+      highlight: 'Industry-leading clean claim rate'
     },
     {
       icon: '🎯',
       title: 'Denial Prevention',
-      description: 'AI-powered coding catches errors before submission. Reduce denials by up to 95%.',
-      highlight: '19-day faster AR'
+      description: 'AI-powered coding catches errors before submission. Significantly reduce denials.',
+      highlight: 'Faster AR turnaround'
     },
     {
       icon: '💰',
       title: 'Revenue Recovery',
       description: 'We find and recover revenue you didn\'t know you were losing.',
-      highlight: '$2.4B in cumulative revenue managed'
+      highlight: 'Significant revenue managed for practices'
     },
     {
       icon: '🔒',
       title: '100% HIPAA Protected',
       description: 'SOC 2 Type II certified. Your patient data is our top priority.',
-      highlight: 'Zero data breaches since 2012'
+      highlight: 'Zero data breaches on record'
     },
     {
       icon: '🧠',
@@ -76,7 +76,7 @@ export default function WhyChooseUs() {
             margin: '0 auto',
             lineHeight: '1.7'
           }}>
-            We've managed $2.4B in claims for 5,000+ practices. Here's why they choose us over traditional billing companies.
+            We've managed claims for thousands of practices. Here's why they choose us over traditional billing companies.
           </p>
         </div>
 
