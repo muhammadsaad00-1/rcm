@@ -4,7 +4,7 @@ import { usePathname } from 'next/navigation';
 import Navbar from '@/components/Navbar';
 import { FullFooter } from '@/components/Footer';
 
-const DASHBOARD_PREFIXES = ['/admin', '/portal', '/billing/dashboard', '/patients', '/payments', '/claims', '/auth'];
+const DASHBOARD_PREFIXES = ['/admin', '/portal', '/billing/dashboard', '/patients', '/payments', '/claims', '/denials', '/insurance', '/reports', '/auth'];
 
 export default function LayoutWrapper({ children }) {
   const pathname = usePathname();

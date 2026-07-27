@@ -37,7 +37,7 @@ export default function DashboardLayout({ children, user, role }) {
     finance: [
       { name: 'Dashboard', href: '/payments/dashboard', icon: '📊' },
       { name: 'Payments', href: '/payments', icon: '💳' },
-      { name: 'Reports', href: '/reports', icon: '📈' },
+      { name: 'Reports', href: '/admin/reports', icon: '📈' },
       { name: 'Claims', href: '/claims', icon: '📄' },
     ],
   };

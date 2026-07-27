@@ -23,7 +23,7 @@ export default async function PaymentsPage({ searchParams }) {
 
   let query = supabase
     .from('payments')
-    .select('*, claims!inner(claim_number, total_charge, patients!inner(first_name, last_name)), users!payments_posted_by_fkey(full_name)')
+    .select('*, claims(claim_number, total_charge, patients(first_name, last_name)), users!payments_posted_by_fkey(full_name)')
     .order('payment_date', { ascending: false });
 
   if (typeFilter) query = query.eq('payment_type', typeFilter);
