@@ -22,14 +22,13 @@ export default async function ClaimDetailPage({ params }) {
       *,
       patients(id, first_name, last_name, date_of_birth, phone, email),
       users!claims_submitted_by_fkey(full_name),
-      claim_line_items(*),
       payments(id, payment_number, amount_paid, payment_type, payment_date),
       denials(id, denial_reason, denial_date, amount_denied, is_appealed, appeal_notes)
     `)
     .eq('id', id)
     .single();
 
-  if (error || !claim) notFound();
+  if (!claim) notFound();
 
   const totalPaid = (claim.payments ?? []).reduce((sum, p) => sum + parseFloat(p.amount_paid || 0), 0);
   const balance = parseFloat(claim.total_charge || 0) - totalPaid;

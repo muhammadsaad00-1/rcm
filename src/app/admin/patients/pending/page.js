@@ -15,12 +15,12 @@ export default async function PendingPortalRequestsPage() {
 
     const { data: userData } = await supabase
         .from('users')
-        .select('role')
+        .select('*')
         .eq('id', user.id)
         .single();
 
     if (userData?.role !== 'admin') {
-        redirect('/dashboard');
+        redirect('/auth/login?error=unauthorized');
     }
 
     // Fetch all portal requests grouped by status
@@ -42,7 +42,7 @@ export default async function PendingPortalRequestsPage() {
     const rejectedCount = recentReviewed?.filter(r => r.status === 'rejected').length || 0;
 
     return (
-        <DashboardLayout role="admin" userName={userData?.full_name}>
+        <DashboardLayout user={userData} role={userData.role}>
             <div style={{ padding: '32px 40px', maxWidth: '1200px' }}>
 
                 {/* Header */}
