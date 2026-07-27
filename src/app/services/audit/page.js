@@ -2,6 +2,7 @@ import Image from 'next/image';
 import Breadcrumb from '@/components/Breadcrumb';
 import PageHero from '@/components/PageHero';
 import { MiniFooter } from '@/components/Footer';
+import ContactForm from '@/components/ContactForm';
 
 export default function AuditPage() {
     return (
@@ -60,18 +61,14 @@ export default function AuditPage() {
                                 <div className="cinfo-card"><div className="cinfo-ico">💲</div><div><div className="cinfo-label">Cost</div><div className="cinfo-val">100% Free — No Obligation Whatsoever</div></div></div>
                             </div>
                         </div>
-                        <div className="cform-wrap">
-                            <div className="cform-title">Request Your Billing Audit</div>
-                            <div className="cform-sub">Free · Confidential · No Commitment Required</div>
-                            <div className="form-row"><div className="form-group"><label>First Name *</label><input type="text" placeholder="Dr. Jane" /></div><div className="form-group"><label>Last Name *</label><input type="text" placeholder="Doe" /></div></div>
-                            <div className="form-group"><label>Practice Name *</label><input type="text" placeholder="Doe Family Medicine" /></div>
-                            <div className="form-group"><label>Email Address *</label><input type="email" placeholder="jane@yourpractice.com" /></div>
-                            <div className="form-group"><label>Phone *</label><input type="tel" placeholder="(555) 000-0000" /></div>
-                            <div className="form-group"><label>Specialty</label><select><option>Select Specialty</option><option>Cardiology</option><option>Orthopedics</option><option>Family Practice</option><option>Internal Medicine</option><option>Other</option></select></div>
-                            <div className="form-group"><label>Current EHR / Billing Software</label><input type="text" placeholder="Epic, Athena, Kareo..." /></div>
-                            <button className="form-submit" type="button">Request Free Billing Audit →</button>
-                            <p className="form-note">🔒 HIPAA Protected · No spam, ever</p>
-                        </div>
+                        <ContactForm
+                            title="Request Your Billing Audit"
+                            subtitle="Free · Confidential · No Commitment Required"
+                            submitButtonText="Request Free Billing Audit →"
+                            emailSubject="Free Billing Audit Request"
+                            includeSpecialty={true}
+                            includeEHR={true}
+                        />
                     </div>
                 </div>
             </section>

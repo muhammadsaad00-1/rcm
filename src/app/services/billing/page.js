@@ -3,6 +3,7 @@ import Link from 'next/link';
 import Breadcrumb from '@/components/Breadcrumb';
 import PageHero from '@/components/PageHero';
 import { MiniFooter } from '@/components/Footer';
+import ContactForm from '@/components/ContactForm';
 
 export default function BillingPage() {
     return (
@@ -49,13 +50,13 @@ export default function BillingPage() {
                 <div className="container">
                     <div className="grid-2 grid-align" style={{ gap: 60 }}>
                         <div><div className="sec-label">Get Started</div><h2 className="sec-title">Ready to Improve Your Clean Claim Rate?</h2><p className="sec-sub">Join many providers who trust RenoxMed with their medical billing. Request a free audit to see how much additional revenue you can recover.</p><div style={{ marginTop: 24, display: 'flex', gap: 12, flexWrap: 'wrap' }}><Link href="/contact" className="btn-primary">Start Today</Link><Link href="/services" className="btn-outline">All Services</Link></div></div>
-                        <div className="cform-wrap"><div className="cform-title">Get a Free Consultation</div><div className="cform-sub">Speak with a billing specialist promptly</div>
-                            <div className="form-row"><div className="form-group"><label>Name *</label><input type="text" placeholder="Dr. Name" /></div><div className="form-group"><label>Practice Name *</label><input type="text" placeholder="Practice Name" /></div></div>
-                            <div className="form-group"><label>Email *</label><input type="email" placeholder="email@practice.com" /></div>
-                            <div className="form-group"><label>Phone *</label><input type="tel" placeholder="(555) 000-0000" /></div>
-                            <div className="form-group"><label>Message</label><textarea placeholder="Tell us about your billing challenges..."></textarea></div>
-                            <button className="form-submit" type="button">Request Consultation →</button>
-                        </div>
+                        <ContactForm
+                            title="Get a Free Consultation"
+                            subtitle="Speak with a billing specialist promptly"
+                            submitButtonText="Request Consultation →"
+                            emailSubject="Medical Billing Inquiry"
+                            includeEHR={false}
+                        />
                     </div>
                 </div>
             </section>

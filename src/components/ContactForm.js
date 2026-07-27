@@ -20,8 +20,8 @@ export default function ContactForm({
   includeSpecialty = true,
   includeEHR = true,
   submitButtonText = 'Submit Free Audit Request →',
+  emailSubject = null,
   onSubmit = null,
-  recipientEmail = 'dumbo.taaha@gmail.com'
 }) {
   const [formData, setFormData] = useState({
     firstName: '',
@@ -63,7 +63,7 @@ export default function ContactForm({
         const submitData = new FormData();
         submitData.append("access_key", process.env.NEXT_PUBLIC_WEB3FORMS_ACCESS_KEY || "853dfd10-7eda-431a-86e3-78d0051d53da");
         submitData.append("to", "info@renoxmed.com");
-        submitData.append("subject", `New Practice Audit Request - ${formData.practiceName}`);
+        submitData.append("subject", emailSubject ? `${emailSubject} - ${formData.practiceName}` : `New Practice Audit Request - ${formData.practiceName}`);
         submitData.append("from_name", `${formData.firstName} ${formData.lastName}`);
         submitData.append("name", `${formData.firstName} ${formData.lastName}`);
         submitData.append("email", formData.email);

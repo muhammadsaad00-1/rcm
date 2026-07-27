@@ -2,6 +2,7 @@ import Image from 'next/image';
 import Breadcrumb from '@/components/Breadcrumb';
 import PageHero from '@/components/PageHero';
 import { MiniFooter } from '@/components/Footer';
+import ContactForm from '@/components/ContactForm';
 
 export default function ARPage() {
     return (
@@ -17,12 +18,14 @@ export default function ARPage() {
                 </div>
             </div></section>
             <section className="section" style={{ background: 'var(--off)' }}><div className="container"><div className="grid-2 grid-align" style={{ gap: 60 }}><div><div className="sec-label">Reduce Your AR</div><h2 className="sec-title">From High AR Days to Low — Systematically</h2><p className="sec-sub">Practices that switch to RenoxMed AR management see a significant reduction from high AR days to low quickly.</p></div>
-                <div className="cform-wrap"><div className="cform-title">Free AR Analysis</div><div className="cform-sub">See your AR recovery potential quickly</div>
-                    <div className="form-row"><div className="form-group"><label>Name *</label><input type="text" /></div><div className="form-group"><label>Email *</label><input type="email" /></div></div>
-                    <div className="form-group"><label>Phone *</label><input type="tel" /></div>
-                    <div className="form-group"><label>Current Avg AR Days (estimate)</label><select><option>Select</option><option>Under 30</option><option>30–45</option><option>45–60</option><option>60–90</option><option>90+</option></select></div>
-                    <button className="form-submit" type="button">Get Free AR Analysis →</button>
-                </div></div></div></section>
+                <ContactForm
+                    title="Free AR Analysis"
+                    subtitle="See your AR recovery potential quickly"
+                    submitButtonText="Get Free AR Analysis →"
+                    emailSubject="AR Management Inquiry"
+                    includeSpecialty={false}
+                    includeEHR={false}
+                /></div></div></section>
             <MiniFooter />
         </>
     );

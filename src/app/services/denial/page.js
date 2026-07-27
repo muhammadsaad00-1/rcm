@@ -2,6 +2,7 @@ import Image from 'next/image';
 import Breadcrumb from '@/components/Breadcrumb';
 import PageHero from '@/components/PageHero';
 import { MiniFooter } from '@/components/Footer';
+import ContactForm from '@/components/ContactForm';
 
 export default function DenialPage() {
     return (
@@ -17,13 +18,14 @@ export default function DenialPage() {
                 </div>
             </div></section>
             <section className="section" style={{ background: 'var(--off)' }}><div className="container"><div className="grid-2 grid-align" style={{ gap: 60 }}><div><div className="sec-label">Stop Losing Revenue</div><h2 className="sec-title">Turn Your Denials Into Paid Claims</h2><p className="sec-sub">Our denial management service typically recovers most appealed claims. Get started with a free denial analysis today.</p></div>
-                <div className="cform-wrap"><div className="cform-title">Free Denial Analysis</div><div className="cform-sub">See how much denied revenue we can recover</div>
-                    <div className="form-row"><div className="form-group"><label>Name *</label><input type="text" /></div><div className="form-group"><label>Practice *</label><input type="text" /></div></div>
-                    <div className="form-group"><label>Email *</label><input type="email" /></div>
-                    <div className="form-group"><label>Phone *</label><input type="tel" /></div>
-                    <div className="form-group"><label>Approx. Monthly Denial Volume</label><select><option>Select</option><option>Under $10K</option><option>$10K–$50K</option><option>$50K–$100K</option><option>$100K+</option></select></div>
-                    <button className="form-submit" type="button">Get Free Denial Analysis →</button>
-                </div></div></div></section>
+                <ContactForm
+                    title="Free Denial Analysis"
+                    subtitle="See how much denied revenue we can recover"
+                    submitButtonText="Get Free Denial Analysis →"
+                    emailSubject="Denial Management Inquiry"
+                    includeSpecialty={false}
+                    includeEHR={false}
+                /></div></div></section>
             <MiniFooter />
         </>
     );

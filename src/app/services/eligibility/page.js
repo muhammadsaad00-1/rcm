@@ -2,6 +2,7 @@ import Image from 'next/image';
 import Breadcrumb from '@/components/Breadcrumb';
 import PageHero from '@/components/PageHero';
 import { MiniFooter } from '@/components/Footer';
+import ContactForm from '@/components/ContactForm';
 
 export default function EligibilityPage() {
     return (
@@ -18,12 +19,14 @@ export default function EligibilityPage() {
                 </div>
             </div></section>
             <section className="section" style={{ background: 'var(--off)' }}><div className="container"><div className="grid-2 grid-align" style={{ gap: 60 }}><div><div className="sec-label">Start Verifying</div><h2 className="sec-title">Eliminate Eligibility Denials Starting This Week</h2><p className="sec-sub">Our team can begin same-day eligibility verifications quickly after onboarding.</p></div>
-                <div className="cform-wrap"><div className="cform-title">Request Free Demo</div><div className="cform-sub">See eligibility verification in action</div>
-                    <div className="form-row"><div className="form-group"><label>Name *</label><input type="text" placeholder="Your Name" /></div><div className="form-group"><label>Email *</label><input type="email" placeholder="email@practice.com" /></div></div>
-                    <div className="form-group"><label>Phone *</label><input type="tel" placeholder="(555) 000-0000" /></div>
-                    <div className="form-group"><label>Practice EHR</label><input type="text" placeholder="Epic, Athena, eCW..." /></div>
-                    <button className="form-submit" type="button">Request Demo →</button>
-                </div></div></div></section>
+                <ContactForm
+                    title="Request Free Demo"
+                    subtitle="See eligibility verification in action"
+                    submitButtonText="Request Demo →"
+                    emailSubject="Eligibility Verification Inquiry"
+                    includeSpecialty={false}
+                    includeEHR={true}
+                /></div></div></section>
             <MiniFooter />
         </>
     );

@@ -3,6 +3,7 @@ import Breadcrumb from '@/components/Breadcrumb';
 import PageHero from '@/components/PageHero';
 import { MiniFooter } from '@/components/Footer';
 import Image from 'next/image';
+import ContactForm from '@/components/ContactForm';
 
 export default function PaymentPostingPage() {
     return (
@@ -57,15 +58,14 @@ export default function PaymentPostingPage() {
                 <div className="container">
                     <div className="grid-2 grid-align" style={{ gap: 60 }}>
                         <div><div className="sec-label">Get Started</div><h2 className="sec-title">Eliminate Posting Errors Today</h2><p className="sec-sub">Let our team handle your payment posting with industry-leading accuracy so you can focus on patient care.</p><div style={{ marginTop: 24, display: 'flex', gap: 12, flexWrap: 'wrap' }}><Link href="/contact" className="btn-primary">Start Today</Link><Link href="/services" className="btn-outline">All Services</Link></div></div>
-                        <div className="cform-wrap">
-                            <div className="cform-title">Get a Free Consultation</div>
-                            <div className="cform-sub">Speak with a payment posting specialist</div>
-                            <div className="form-row"><div className="form-group"><label>Name *</label><input type="text" placeholder="Dr. Name" /></div><div className="form-group"><label>Practice Name *</label><input type="text" placeholder="Practice Name" /></div></div>
-                            <div className="form-group"><label>Email *</label><input type="email" placeholder="email@practice.com" /></div>
-                            <div className="form-group"><label>Phone *</label><input type="tel" placeholder="(555) 000-0000" /></div>
-                            <div className="form-group"><label>Message</label><textarea placeholder="Tell us about your payment posting needs..."></textarea></div>
-                            <button className="form-submit" type="button">Request Consultation →</button>
-                        </div>
+                        <ContactForm
+                            title="Get a Free Consultation"
+                            subtitle="Speak with a payment posting specialist"
+                            submitButtonText="Request Consultation →"
+                            emailSubject="Payment Posting Inquiry"
+                            includeSpecialty={true}
+                            includeEHR={false}
+                        />
                     </div>
                 </div>
             </section>

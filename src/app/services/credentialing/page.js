@@ -2,6 +2,7 @@ import Image from 'next/image';
 import Breadcrumb from '@/components/Breadcrumb';
 import PageHero from '@/components/PageHero';
 import { MiniFooter } from '@/components/Footer';
+import ContactForm from '@/components/ContactForm';
 
 export default function CredentialingPage() {
     return (
@@ -17,13 +18,14 @@ export default function CredentialingPage() {
                 </div>
             </div></section>
             <section className="section" style={{ background: 'var(--off)' }}><div className="container"><div className="grid-2 grid-align" style={{ gap: 60 }}><div><div className="sec-label">Get Credentialed Fast</div><h2 className="sec-title">Efficient Credentialing Turnaround</h2><p className="sec-sub">New provider? Expanding your practice? We handle all credentialing paperwork so you can start billing immediately after approval.</p></div>
-                <div className="cform-wrap"><div className="cform-title">Credentialing Inquiry</div><div className="cform-sub">Tell us about your credentialing needs</div>
-                    <div className="form-row"><div className="form-group"><label>Provider Name *</label><input type="text" /></div><div className="form-group"><label>Practice Name *</label><input type="text" /></div></div>
-                    <div className="form-group"><label>Email *</label><input type="email" /></div>
-                    <div className="form-group"><label>Phone *</label><input type="tel" /></div>
-                    <div className="form-group"><label>Credentialing Need</label><select><option>New Provider Enrollment</option><option>Re-credentialing</option><option>CAQH Setup/Update</option><option>Medicare/Medicaid Enrollment</option><option>Hospital Privileges</option></select></div>
-                    <button className="form-submit" type="button">Start Credentialing Process →</button>
-                </div></div></div></section>
+                <ContactForm
+                    title="Credentialing Inquiry"
+                    subtitle="Tell us about your credentialing needs"
+                    submitButtonText="Start Credentialing Process →"
+                    emailSubject="Provider Credentialing Inquiry"
+                    includeSpecialty={false}
+                    includeEHR={false}
+                /></div></div></section>
             <MiniFooter />
         </>
     );
