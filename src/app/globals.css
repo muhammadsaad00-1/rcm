@@ -3083,6 +3083,23 @@ textarea {
   padding: 20px;
 }
 
+.quick-action-item {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  padding: 16px;
+  background: var(--off);
+  border-radius: var(--r-sm);
+  text-decoration: none;
+  border: 1px solid transparent;
+  transition: all 0.2s;
+}
+
+.quick-action-item:hover {
+  border-color: var(--teal);
+  background: var(--teal-soft);
+}
+
 .qa-title {
   font-size: 14px;
   font-weight: 700;

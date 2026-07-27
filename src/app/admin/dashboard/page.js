@@ -286,24 +286,9 @@ function StatCard({ title, value, icon, color, subtitle }) {
 
 function QuickActionItem({ title, link, icon }) {
   return (
-    <Link href={link} style={{
-      display: 'flex',
-      alignItems: 'center',
-      gap: '16px',
-      padding: '16px',
-      background: 'var(--off)',
-      borderRadius: 'var(--r-sm)',
-      textDecoration: 'none',
-      border: '1px solid transparent',
-      transition: 'all 0.2s',
-    }}
-    onMouseEnter={(e) => { e.currentTarget.style.borderColor = 'var(--teal)'; e.currentTarget.style.background = 'var(--teal-soft)'; }}
-    onMouseLeave={(e) => { e.currentTarget.style.borderColor = 'transparent'; e.currentTarget.style.background = 'var(--off)'; }}
-    >
+    <Link href={link} className="quick-action-item">
       <div style={{ fontSize: '20px' }}>{icon}</div>
-      <div className="text-navy font-semibold text-sm">
-        {title}
-      </div>
+      <div className="text-navy font-semibold text-sm">{title}</div>
       <div style={{ marginLeft: 'auto', color: 'var(--teal)' }}>→</div>
     </Link>
   );
