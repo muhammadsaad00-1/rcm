@@ -1,4 +1,5 @@
 import { createClient } from '@/lib/supabase/server';
+import { createClient as createAdminClient } from '@supabase/supabase-js';
 import { redirect, notFound } from 'next/navigation';
 import DashboardLayout from '@/components/DashboardLayout';
 import Link from 'next/link';
@@ -16,7 +17,13 @@ export default async function ClaimDetailPage({ params }) {
 
   if (!userData) redirect('/auth/login?error=profile_missing');
 
-  const { data: claim, error } = await supabase
+  // Use service role to bypass RLS on the claim fetch — access is enforced manually below
+  const adminClient = createAdminClient(
+    process.env.NEXT_PUBLIC_SUPABASE_URL,
+    process.env.SUPABASE_SERVICE_ROLE_KEY
+  );
+
+  const { data: claim } = await adminClient
     .from('claims')
     .select(`
       *,
@@ -29,6 +36,9 @@ export default async function ClaimDetailPage({ params }) {
     .single();
 
   if (!claim) notFound();
+
+  // Manual access control: billing staff can only view their own submitted claims
+  if (userData.role === 'billing' && claim.submitted_by !== user.id) notFound();
 
   const totalPaid = (claim.payments ?? []).reduce((sum, p) => sum + parseFloat(p.amount_paid || 0), 0);
   const balance = parseFloat(claim.total_charge || 0) - totalPaid;
