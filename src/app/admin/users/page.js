@@ -19,7 +19,7 @@ export default async function UsersManagementPage() {
     .single();
 
   if (userData?.role !== 'admin') {
-    redirect('/dashboard');
+    redirect('/auth/login?error=unauthorized');
   }
 
   // Fetch all users
@@ -92,15 +92,15 @@ export default async function UsersManagementPage() {
                   <th style={{ padding: '12px 8px', color: '#718096', fontWeight: '600' }}>Phone</th>
                   <th style={{ padding: '12px 8px', color: '#718096', fontWeight: '600' }}>Role</th>
                   <th style={{ padding: '12px 8px', color: '#718096', fontWeight: '600' }}>Status</th>
-                  <th style={{ padding: '12px 8px', color: '#718096', fontWeight: '600' }}>Last Login</th>
                   <th style={{ padding: '12px 8px', color: '#718096', fontWeight: '600' }}>Joined</th>
+                  <th style={{ padding: '12px 8px', color: '#718096', fontWeight: '600' }}>Actions</th>
                 </tr>
               </thead>
               <tbody>
                 {allUsers?.map((u) => (
                   <tr key={u.id} style={{ borderBottom: '1px solid #e2e8f0' }}>
                     <td style={{ padding: '12px 8px', fontWeight: '600', color: '#2d3748' }}>
-                      {u.full_name}
+                      {u.full_name || '—'}
                     </td>
                     <td style={{ padding: '12px 8px', color: '#718096' }}>
                       {u.email}
@@ -133,10 +133,12 @@ export default async function UsersManagementPage() {
                       </span>
                     </td>
                     <td style={{ padding: '12px 8px', color: '#718096' }}>
-                      {u.last_login_at ? new Date(u.last_login_at).toLocaleDateString() : 'Never'}
-                    </td>
-                    <td style={{ padding: '12px 8px', color: '#718096' }}>
                       {new Date(u.created_at).toLocaleDateString()}
+                    </td>
+                    <td style={{ padding: '12px 8px' }}>
+                      <Link href={`/admin/users/${u.id}`} style={{ color: '#667eea', textDecoration: 'none', fontWeight: '600', fontSize: '13px' }}>
+                        Edit →
+                      </Link>
                     </td>
                   </tr>
                 ))}

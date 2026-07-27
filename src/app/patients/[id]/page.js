@@ -60,6 +60,20 @@ export default async function PatientDetailPage({ params }) {
             </p>
           </div>
           <div style={{ display: 'flex', gap: '12px' }}>
+            {(userData.role === 'admin' || userData.role === 'billing' || userData.role === 'support') && (
+              <Link href={`/patients/${id}/edit`} style={{
+                padding: '12px 24px',
+                background: 'white',
+                color: '#667eea',
+                textDecoration: 'none',
+                borderRadius: '8px',
+                fontWeight: '600',
+                fontSize: '14px',
+                border: '1px solid #e2e8f0'
+              }}>
+                Edit Patient
+              </Link>
+            )}
             {(userData.role === 'admin' || userData.role === 'billing') && (
               <Link href={`/claims/new?patient=${id}`} style={{
                 padding: '12px 24px',

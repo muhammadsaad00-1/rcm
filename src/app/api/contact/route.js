@@ -14,8 +14,7 @@ export async function POST(request) {
       );
     }
 
-    // Use the user's provided Web3Forms access key
-    const accessKey = "35fcbfbe-2f94-4bca-9201-d4c8d4709e43";
+    const accessKey = process.env.NEXT_PUBLIC_WEB3FORMS_ACCESS_KEY || "853dfd10-7eda-431a-86e3-78d0051d53da";
 
     const web3formsPayload = {
       access_key: accessKey,

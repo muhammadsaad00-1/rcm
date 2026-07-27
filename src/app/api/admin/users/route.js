@@ -55,16 +55,17 @@ export async function POST(request) {
         return NextResponse.json({ error: authError.message }, { status: 400 });
       }
 
-      // Update user profile with role
+      // Insert (or update) user profile with role
       const { error: profileError } = await supabaseAdmin
         .from('users')
-        .update({
+        .upsert({
+          id: authData.user.id,
+          email: email,
           full_name: fullName,
           phone: phone || null,
           role: role,
           is_active: true
-        })
-        .eq('id', authData.user.id);
+        }, { onConflict: 'id' });
 
       if (profileError) {
         return NextResponse.json({ error: profileError.message }, { status: 400 });
@@ -98,16 +99,17 @@ export async function POST(request) {
         }, { status: 400 });
       }
 
-      // Update user profile
+      // Insert (or update) user profile
       const { error: profileError } = await supabase
         .from('users')
-        .update({
+        .upsert({
+          id: authData.user.id,
+          email: email,
           full_name: fullName,
           phone: phone || null,
           role: role,
           is_active: true
-        })
-        .eq('id', authData.user.id);
+        }, { onConflict: 'id' });
 
       if (profileError) {
         return NextResponse.json({ error: profileError.message }, { status: 400 });
