@@ -22,7 +22,6 @@ export default function DashboardLayout({ children, user, role }) {
       { name: 'Claims', href: '/claims', icon: '📄' },
       { name: 'Payments', href: '/payments', icon: '💳' },
       { name: 'Reports', href: '/admin/reports', icon: '📈' },
-      { name: 'Contact Us', href: '/contact', icon: '📞' },
     ],
     billing: [
       { name: 'Dashboard', href: '/billing/dashboard', icon: '📊' },
@@ -30,20 +29,16 @@ export default function DashboardLayout({ children, user, role }) {
       { name: 'Denials', href: '/denials', icon: '🚫' },
       { name: 'Payments', href: '/payments', icon: '💳' },
       { name: 'Patients', href: '/patients', icon: '🏥' },
-      { name: 'Contact Us', href: '/contact', icon: '📞' },
     ],
     support: [
-      { name: 'Dashboard', href: '/dashboard', icon: '📊' },
       { name: 'Patients', href: '/patients', icon: '🏥' },
       { name: 'Insurance', href: '/insurance', icon: '🛡️' },
-      { name: 'Contact Us', href: '/contact', icon: '📞' },
     ],
     finance: [
       { name: 'Dashboard', href: '/payments/dashboard', icon: '📊' },
       { name: 'Payments', href: '/payments', icon: '💳' },
       { name: 'Reports', href: '/reports', icon: '📈' },
       { name: 'Claims', href: '/claims', icon: '📄' },
-      { name: 'Contact Us', href: '/contact', icon: '📞' },
     ],
   };
 
@@ -71,8 +66,8 @@ export default function DashboardLayout({ children, user, role }) {
       {/* Sidebar */}
       <aside className={`sidebar-modern ${isMobileOpen ? 'mobile-open' : ''}`}>
         <div className="sidebar-brand">
-          <Link href="/" style={{ textDecoration: 'none', color: 'white', display: 'block', marginBottom: '8px' }}>
-            <img src="/logo1.jpg" alt="RenoxMed" style={{ height: '64px', width: 'auto', filter: 'brightness(0) invert(1)' }} />
+          <Link href="/" style={{ textDecoration: 'none', display: 'inline-block' }}>
+            <img src="/logo1.jpg" alt="RenoxMed" style={{ height: '64px', width: 'auto', display: 'block', objectFit: 'contain', background: 'white', borderRadius: '10px', padding: '6px 12px' }} />
           </Link>
         </div>
 
@@ -109,7 +104,12 @@ export default function DashboardLayout({ children, user, role }) {
             onClick={() => router.push('/auth/logout')}
             className="sidebar-logout-btn"
           >
-            <span style={{ opacity: 0.8 }}>🚪</span> Logout
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+              <path d="M9 21H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h4" />
+              <polyline points="16 17 21 12 16 7" />
+              <line x1="21" y1="12" x2="9" y2="12" />
+            </svg>
+            Sign Out
           </button>
         </div>
       </aside>
